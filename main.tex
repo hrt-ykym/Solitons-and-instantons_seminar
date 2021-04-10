@@ -1,6 +1,6 @@
 \documentclass[dvipdfmx,11pt,a4paper]{jsbook}
 \usepackage{package}
-\usepackage{a4wide}
+%\usepackage{a4wide}
 \usepackage[dvipdfmx]{hyperref}
 \usepackage{pxjahyper}
 
@@ -18,6 +18,10 @@
 \def\theequation{\thesection.\arabic{equation}}
 \makeatother
 
+\addtolength{\fullwidth}{-26truemm} %全体の幅(ヘッダ部の幅)を既定値から26mm小さくする
+\setlength{\textwidth}{\fullwidth}  %本文の幅(textwidth)を全体の幅(=ヘッダ部の幅)にそろえる
+\setlength{\evensidemargin}{10truemm}   %偶数ページの左余白を10mm(+1インチ)にする
+\setlength{\oddsidemargin}{10truemm}    %奇数ページの左余白を10mm(+1インチ)にする
 
 \chapter{CLASSICAL SOLITONS AND SOLITARY WAVES}
 \begin{itembox}[l]{目的}
@@ -28,12 +32,39 @@
 
 本ゼミにおいてのメインテーマとなるソリトンとインスタントンであるが,どちらも簡単にいえば形状を保ったまま進行し互いに衝突・追突しても崩れないような局在化(localized)した波の事である.そもそもソリトンの英語スペルはsolitonであり,これはsolitary(孤立した)+on(粒子につける接尾辞(Fermi{\bf on}, Bos{\bf on}, Glu{\bf on}, Phot{\bf on} \dots))から来ている.すなわち孤立した波の塊でありながら歪むことなく安定に一様な速度で進行する波であり,粒子的に振る舞うような物理的対象を指す.ここで,なぜ局在化した波が粒子としてみなせるかということについては場の理論において場が作る波をエネルギーのたまり場のようなものであると捉えると,ポツンと局在化したエネルギーが非離散的(連続的)に形を崩さずに移動していればまるで粒子が移動していると拡大解釈できることから理解できる.
 
+このようなソリトンは様々な応用が効く.本来素粒子は量子論で語られるべきものであるが,相対論的な場の理論から素粒子もlocalizeされたエネルギーパケットをもっていることがわかっており,古典場の理論からスタートするソリトンを用いてその振る舞いを説明することができ,ソリトンが古典論と量子論をつなげる可能性を持ち合わせていることを意味する.他にもソリトンには原子核,陽子中性子の模型や宇宙論のテクスチャ,物性の磁気スカーミオンなど素粒子原子核から物性,宇宙まで様々な分野において重要な役割を果たす.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=8cm]{figure/soliton.png}
     \caption{ソリトン}
     \label{soliton}
 \end{figure}
+本章におけるメインテーマはsin-Gordons solitonやkinkの$\phi^4$理論や'tHooft-Polyakov monopoleやインスタントンなどの例を用いながらソリトン(Solitons)と孤立波(Solitary waves)の区別をつけるということである.
+
+また,以下にこれから使う記法についてまとめておく.
+\begin{screen}
+    \begin{itemize}
+        \item 空間と時空の座標系はベクトル$x^{\mu}(\mu=0, 1, 2, 3, ; x^{0}\equiv ct, x^{1}=x, x^{2}=y, x^{3}=z)$で与えられる.
+        \item 上付きまたは下付きの添字はミンコフスキー計量テンソル$g_{\mu \nu}=g^{\mu \nu}$;
+              \begin{align*}
+                  g_{\mu \nu}=
+                  \left(\begin{array}{cccc}
+                          1 & 0  & 0  & 0  \\
+                          0 & -1 & 0  & 0  \\
+                          0 & 0  & -1 & 0  \\
+                          0 & 0  & 0  & -1
+                      \end{array}\right)
+              \end{align*}
+              で書かれる.(Mostly minus)
+        \item 同じ添字がついてるものについては足し上げる.(縮約記法)
+        \item $\partial_{\mu}$は時間や空間での微分$\frac{\partial}{\partial_{\mu}}$を表す.
+        \item 簡単のために本セクションに限っては1つの時間座標と1つの空間座標の(1+1)次元,つまり$\mu=0,1$とする.
+    \end{itemize}
+\end{screen}
+
+\section{Solitary waves and solitons}
+
 
 
 \end{document}
