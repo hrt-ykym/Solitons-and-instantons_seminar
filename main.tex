@@ -66,18 +66,37 @@
 \section{Solitary waves and solitons}
 先に述べたようにSolitonとSolitary waveは非線形の波動方程式においてどちらも局在化した特別な特徴をもつ解でありその区別はどのようにできるかを学ぶ.
 
+\subsection{Case of simplest wave function}
 まず,よくある最もシンプルな線形かつ非分散的である波動方程式
 \begin{align}
-    \Box\phi & =\partial^{\mu}\partial_{\mu}\phi\nonumber                                                               \\
-             & =\left(\dfrac{1}{c^2}\dfrac{\partial^2}{\partial t^2}-\dfrac{\partial^2}{\partial x^2}\right)\phi(x,t)=0
+    \Box\phi & =\partial^{\mu}\partial_{\mu}\phi\nonumber                                                                          \\
+             & =\left(\dfrac{1}{c^2}\dfrac{\partial^2}{\partial t^2}-\dfrac{\partial^2}{\partial x^2}\right)\phi(x,t)=0\label{2.1}
 \end{align}
 を考える.この解は以下のような2つの特徴をもつ.
 \begin{description}
-    \item[(i)] $\cdot$ 解である$f(x\pm ct)$は全領域で一意に定まり,微分が定義され,連続である(well-behaved function).\\
-          $\cdot$ 仮に局在化した解$f$をもってきた場合,
-    \item[(ii)]
-\end{description}
+    \item[(i)] 解である$f(x\pm ct)$は全領域で一意に定まり,微分が定義され,連続である(well-behaved function).また,$\omega=kc$とすれば$\cos(kx\pm \omega t)$と$\sin(kx\pm \omega t)$の平面波はどちらも式(\ref{2.1})の1つの解となっておりフーリエ変換で重ね合わせれば
+          \begin{align}
+              f(x-c t)=\int \mathrm{d} k\left[a_{1}(k) \cos (k x-\omega t)+a_{2}(k) \sin (k x-\omega t)\right]
+          \end{align}
+          とかける.そして仮に局在化した解$f(x-ct)$をもってきた場合,その波のパケットは一定速度$\pm c$で歪みや形の崩れなく進む.
+    \item[(ii)] 波動方程式が線形であるが故に解として波のパケット$f_1(x-ct)$と$f_2(x+ct)$が与えられれば,それらの線形結合である
+          \begin{align}
+              f_3(x,t)=f_1(x-ct)+f_2(x+ct)
+          \end{align}
+          もまた解となる.
 
+          そして$t\rightarrow-\infty$で$f(x,t)$は2つのパケットはそれぞれ別の方向に向かって二分され,その後時間をかけて互いに歪まずに接近し衝突する.そして衝突後も形を崩さず$t\rightarrow\infty$に向かって同じ2つのパケットが一定の速度で移動していく.
+\end{description}
+つまりこれらを簡単にまとめれば式(\ref{2.1})の解は以下の性質を持つ.
+\begin{screen}
+    \begin{description}
+        \item[(i)] 1つのパケットが歪まず,形を維持したまま一定速度で移動する.
+        \item[(ii)] いくつかのパケットが互いに衝突したとしてもその進行速度と形が維持される.
+    \end{description}
+\end{screen}
+しかしながら大半の波動方程式は非線形校を含んでいたり,分散的であったりと複雑で全ての波動方程式が性質(i),(ii)を満たしているとは限らない.
+
+\subsection{Case of Klein-Gordon equation}
 
 
 \end{document}
