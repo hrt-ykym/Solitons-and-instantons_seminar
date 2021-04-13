@@ -68,25 +68,25 @@
 
 まず,よくある最もシンプルな線形かつ非分散的である波動方程式
 \begin{align}
-    \Box\phi & =\partial^{\mu}\partial_{\mu}\phi\nonumber                                                                          \\
-             & =\left(\dfrac{1}{c^2}\dfrac{\partial^2}{\partial t^2}-\dfrac{\partial^2}{\partial x^2}\right)\phi(x,t)=0\label{2.1}
+    \Box\phi & =\partial^{\mu}\partial_{\mu}\phi\nonumber                                                                             \\
+             & =\left(\dfrac{1}{c^2}\dfrac{\partial^2}{\partial t^2}-\dfrac{\partial^2}{\partial x^2}\right)\phi(x,t)=0\label{eq:2.1}
 \end{align}
 を考える.この解は以下のような2つの特徴をもつ.
 \begin{description}
-    \item[(i)] 解である$f(x\pm ct)$は全領域で一意に定まり,微分が定義され,連続である(well-behaved function).また,$\omega=kc$とすれば$\cos(kx\pm \omega t)$と$\sin(kx\pm \omega t)$の平面波はどちらも式(\ref{2.1})の1つの解となっておりフーリエ変換で重ね合わせれば
+    \item[(i)] 解である$f(x\pm ct)$は全領域で一意に定まり,微分が定義され,連続である(well-behaved function).また,$\omega=kc$とすれば$\cos(kx\pm \omega t)$と$\sin(kx\pm \omega t)$の平面波はどちらも式(\ref{eq:2.1})の1つの解となっておりフーリエ変換で重ね合わせれば
           \begin{align}
               f(x-c t)=\int \mathrm{d} k\left[a_{1}(k) \cos (k x-\omega t)+a_{2}(k) \sin (k x-\omega t)\right]
           \end{align}
           とかける.そして仮に局在化した解$f(x-ct)$をもってきた場合,その波のパケットは一定速度$\pm c$で歪みや形の崩れなく進む.
     \item[(ii)] 波動方程式が線形であるが故に解として波のパケット$f_1(x-ct)$と$f_2(x+ct)$が与えられれば,それらの線形結合である
-          \begin{align}
+          \begin{align*}
               f_3(x,t)=f_1(x-ct)+f_2(x+ct)
-          \end{align}
+          \end{align*}
           もまた解となる.
 
           そして$t\rightarrow-\infty$で$f(x,t)$は2つのパケットはそれぞれ別の方向に向かって二分され,その後時間をかけて互いに歪まずに接近し衝突する.そして衝突後も形を崩さず$t\rightarrow\infty$に向かって同じ2つのパケットが一定の速度で移動していく.
 \end{description}
-つまりこれらを簡単にまとめれば式(\ref{2.1})の解は以下の性質を持つ.
+つまりこれらを簡単にまとめれば式(\ref{eq:2.1})の解は以下の性質を持つ.
 \begin{screen}
     \begin{description}
         \item[(i)] 1つのパケットが歪まず,形を維持したまま一定速度で移動する.
@@ -94,12 +94,73 @@
     \end{description}
 \end{screen}
 しかしながら大半の波動方程式は非線形校を含んでいたり,分散的であったりと複雑で全ての波動方程式が性質(i),(ii)を満たしているとは限らない.
+\begin{figure}[H]
+    \centering
+    \subfigure[]{%
+        \includegraphics[clip, width=0.45\columnwidth]{figure/2-soliton1.png}}%
+    \subfigure[]{%
+        \includegraphics[clip, width=0.45\columnwidth]{figure/2-soliton2.png}}%
+    \label{2-soliton}
+\end{figure}
 
-そのうちの一つが式(\ref{2.1})に$m^2c^2$の項を加えたKlein-Gordon方程式
+そのうちの一つが式(\ref{eq:2.1})に$m^2c^2$の項を加えたKlein-Gordon方程式
 \begin{align}
-    \left(\square+m^{2} c^{2}\right) \phi(x, t) & \equiv\left(\frac{1}{c^{2}} \frac{\partial^{2}}{\partial t^{2}}-\frac{\partial^{2}}{\partial x^{2}}+m^{2} c^{2}\right) \phi(x, t) \\
+    \left(\square+m^{2} c^{2}\right) \phi(x, t) & \equiv\left(\frac{1}{c^{2}} \frac{\partial^{2}}{\partial t^{2}}-\frac{\partial^{2}}{\partial x^{2}}+m^{2} c^{2}\right) \phi(x, t)\nonumber \\
                                                 & =0
 \end{align}
-がある.これは明らかに先と同様に線形でありながら$\cos(kx\pm \omega t)$と$\sin(kx\pm \omega t)$の平面波解をもつ.しかし今回の場合は$\omega^2=k^2c^2+m^2c^4$であり
+がある.これは明らかに先と同様に線形でありながら$\cos(kx\pm \omega t)$と$\sin(kx\pm \omega t)$の平面波解をもつ.しかし今回の場合は$\omega^2=k^2c^2+m^2c^4$であり分散的という違いがある.いま先と同様に線形であることを用いて局在化したパケット解
+\begin{align*}
+    f(x-ct)=\int \mathrm{d} k\left[a_{1}(k) \cos (k x-\omega t)+a_{2}(k) \sin (k x-\omega t)\right]
+\end{align*}
+を作ったときに今回の場合,波の進行速度が$\omega(k)/k$というように波数$k$に依存することになる.したがって一度作った波のパケットが時間とともに違った速度で形を広げながら伝搬してしまい,先に述べた(i)(ii)の特徴を持ち合わせていないということがわかる.
+\begin{figure}[H]
+    \centering
+    \subfigure[]{%
+        \includegraphics[clip, width=0.53\columnwidth]{figure/wave(spread)1.png}}%
+    \subfigure[]{%
+        \includegraphics[clip, width=0.55\columnwidth]{figure/wave(spread)2.png}}%
+    \label{wave(spread)}
+\end{figure}
+なお紹介だけにはなるが,他には解析的には解けないが式(\ref{eq:2.1})に$\phi^3$の項を付け加えたような以下の非線形波動方程式も(i)(ii)の特徴を持ち合わせていない.
+\begin{align}
+    \left(\frac{1}{c^{2}} \frac{\partial^{2}}{\partial t^{2}}-\frac{\partial^{2}}{\partial x^{2}}\right) \phi(x, t)+\phi^{3}(x, t)=0\label{eq:2.4}
+\end{align}
+これらを踏まえて一般的にはSolitonとSolitary-waveの以下のような区別がなされている.
+\begin{screen}
+    \begin{itemize}
+        \item (i)の特徴を満たすもの $\cdots$ {\bf Solitary-wave}, {\bf Soliton}
+        \item (i)を及び(ii)の特徴を満たすもの $\cdots$ {\bf Soliton}
+    \end{itemize}
+\end{screen}
+
+しかしこれではどういったときに(i)または(ii)の特徴を満たすのかはわかっておらず,普遍的ではない.
+
+ここで場$\phi_i$の波自体に着目するのではなく,むしろ場$\phi_i$がつくるエネルギー密度$\epsilon$に着目してみる.まず条件としては以下のような設定を課す.
+\begin{itemize}
+    \item 空間内の全エネルギー$E[\phi_i]$は保存し,一般性を失わない.
+    \item エネルギー$E$の最小値は0.
+    \item 空間内でエネルギーは有限の値をとるが無限遠では$E=0$.
+    \item 任意の時刻$t$において十分遠方($x\rightarrow \infty$)で最小値$E[\phi_i]$に漸近するような場の方程式の解に対して局在化した(localized)という言葉をつかう.
+\end{itemize}
+ではこれらをいくつかの例を紹介しながらlocalizeするとはどういうことか見ていく.先に紹介した式(\ref{eq:2.4})の方程式
+\begin{align*}
+    \left(\frac{1}{c^{2}} \frac{\partial^{2}}{\partial t^{2}}-\frac{\partial^{2}}{\partial x^{2}}\right) \phi(x, t)+\phi^{3}(x, t)=0
+\end{align*}
+においては場$\phi$が作るエネルギーを見てみると
+\begin{align*}
+    E[\phi]=\int_{-\infty}^{\infty} \mathrm{d} x\left[\frac{1}{2 c^{2}}\left(\frac{\partial \phi}{\partial t}\right)^{2}+\frac{1}{2}\left(\frac{\partial \phi}{\partial x}\right)^{2}+\frac{1}{4} \phi^{4}\right]
+\end{align*}
+で与えられる.これは$\phi=0$で最小値$E[\phi]$をとるから,localizeすると言いたければ,十分遠方$x\rightarrow \infty$で$\phi(x,t)\rightarrow 0$となっていれば良い.\\
+
+他には自発的対称性の破れを記述する有名な
+\begin{align}
+    \frac{1}{c^{2}} \frac{\partial^{2} \phi}{\partial t^{2}}-\frac{\partial^{2} \phi}{\partial x^{2}}-\phi+\phi^{3}=0
+\end{align}
+という非線波動方程式におけるエネルギーは
+\begin{align}
+    E[\phi]=\int_{-x}^{\infty} \mathrm{d} x\left[\frac{1}{2 c^{2}}\left(\frac{\partial \phi}{\partial t}\right)^{2}+\frac{1}{2}\left(\frac{\partial \phi}{\partial x}\right)^{2}+\frac{1}{4}\left(\phi^{2}-1\right)^{2}\right]
+\end{align}
+で与えられる.この$E[\phi]$は$\phi(x,t)=\pm 1$で最小値をとるから,localizeすると言いたければ,十分遠方$x\rightarrow \infty$で$\phi(x,t)\rightarrow \pm 1$となる必要がある.
+
 
 \end{document}
