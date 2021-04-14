@@ -93,7 +93,7 @@
         \item[(ii)] いくつかのパケットが互いに衝突したとしてもその進行速度と形が維持される.
     \end{description}
 \end{screen}
-しかしながら大半の波動方程式は非線形校を含んでいたり,分散的であったりと複雑で全ての波動方程式が性質(i),(ii)を満たしているとは限らない.
+しかしながら大半の波動方程式は非線形校を含んでいたり,分散的であったりと複雑で全ての波動方程式が性質(i),(ii)を満たしているとは限らない.(別ファイルに添付したGifを参照.)
 \begin{figure}[H]
     \centering
     \subfigure[]{%
@@ -112,7 +112,7 @@
 \begin{align*}
     f(x-ct)=\int \mathrm{d} k\left[a_{1}(k) \cos (k x-\omega t)+a_{2}(k) \sin (k x-\omega t)\right]
 \end{align*}
-を作ったときに今回の場合,波の進行速度が$\omega(k)/k$というように波数$k$に依存することになる.したがって一度作った波のパケットが時間とともに違った速度で形を広げながら伝搬してしまい,先に述べた(i)(ii)の特徴を持ち合わせていないということがわかる.
+を作ったときに今回の場合,波の進行速度が$\omega(k)/k$というように波数$k$に依存することになる.したがって一度作った波のパケットが時間とともに違った速度で形を広げながら伝搬してしまい,先に述べた(i)(ii)の特徴を持ち合わせていないということがわかる.(別ファイルに添付したGifを参照.)
 \begin{figure}[H]
     \centering
     \subfigure[]{%
@@ -147,9 +147,9 @@
     \left(\frac{1}{c^{2}} \frac{\partial^{2}}{\partial t^{2}}-\frac{\partial^{2}}{\partial x^{2}}\right) \phi(x, t)+\phi^{3}(x, t)=0
 \end{align*}
 においては場$\phi$が作るエネルギーを見てみると
-\begin{align*}
+\begin{align}
     E[\phi]=\int_{-\infty}^{\infty} \mathrm{d} x\left[\frac{1}{2 c^{2}}\left(\frac{\partial \phi}{\partial t}\right)^{2}+\frac{1}{2}\left(\frac{\partial \phi}{\partial x}\right)^{2}+\frac{1}{4} \phi^{4}\right]
-\end{align*}
+\end{align}
 で与えられる.これは$\phi=0$で最小値$E[\phi]$をとるから,localizeすると言いたければ,十分遠方$x\rightarrow \infty$で$\phi(x,t)\rightarrow 0$となっていれば良い.\\
 
 他には自発的対称性の破れを記述する有名な
@@ -161,6 +161,27 @@
     E[\phi]=\int_{-x}^{\infty} \mathrm{d} x\left[\frac{1}{2 c^{2}}\left(\frac{\partial \phi}{\partial t}\right)^{2}+\frac{1}{2}\left(\frac{\partial \phi}{\partial x}\right)^{2}+\frac{1}{4}\left(\phi^{2}-1\right)^{2}\right]
 \end{align}
 で与えられる.この$E[\phi]$は$\phi(x,t)=\pm 1$で最小値をとるから,localizeすると言いたければ,十分遠方$x\rightarrow \infty$で$\phi(x,t)\rightarrow \pm 1$となる必要がある.
+
+
+localizeするとはどういうことかが普遍的に述べられた上でエネルギー密度の観点からSolitary waveとは何かを考える.Solitary waveは場の方程式においてlocalizeしているという特異性だけでなく次のような時空依存のエネルギー密度を描くものと定義できる.
+\begin{align}
+    \epsilon(\bm{x},t)=\epsilon(\bm{x}-\bm{u}t)\quad (\bm{u}: \text{速度ベクトル})\label{eq:2.8}
+\end{align}
+これは明らかに場が作るエネルギー密度のパケットが一定の速度で形が変わらずに移動するという(i)の特徴を表現できており,これがまさにSolitary  waveの定義とできる.
+
+次にSolitonについてもエネルギー密度の観点からその定義を考える.Solitonは先の議論の特徴(i)だけでなく特徴(ii)に重きを置く必要がある.特徴(ii)はいくつかのパケットが互いに衝突したとしてもその進行速度と形が維持されるということであった.そこで以下のような状況設定で議論を進める.
+\begin{itemize}
+    \item 非線形波動方程式でlocalizeした$N$個のsolitary wave解$\epsilon_0(\bm{x}-\bm{u}t)$で解が構成されている.
+\end{itemize}
+上記の状況を式で表せば
+\begin{align}
+     & \varepsilon(x, t) \rightarrow \sum_{i=1}^{N} \varepsilon_{0}\left(x-a_{i}-u_{i} t\right), \quad \text { as } t \rightarrow-\infty\label{eq:2.9}             \\
+     & \varepsilon(x, t) \rightarrow \sum_{i=1}^{N} \varepsilon_{0}\left(x-a_{i}-u_{i} t+\delta_{i}\right), \quad \text { as } t \rightarrow+\infty\label{eq:2.10} \\
+     & \qquad \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\bm{\delta_i}:\text{定ベクトル})\nonumber
+\end{align}
+となる.これは$t\rightarrow -\infty$であるいくつかのSolitary waveのエネルギーパケットをもった解が一定速度かつ歪みなく進んだのち$t\rightarrow \infty$で時間発展したとしても形が変わらないという特徴(ii)の描像を描けているといえる.つまりこのエネルギー密度の関係式を満たすものがSolitonであると定義できる.
+
+以上でSolitonとSolitary waveの区別ができるようになった.そしてこの世界には定常解を含めてSolitary waveは割と存在する.しかしながらSolitonは式(\ref{eq:2.10})の要請の縛りが強くほとんど存在しないというのが現状である.そもそも非線形場の方程式に対してSolitary waveの要請式(\ref{eq:2.8})を確認するのも割と大変な作業となる.そして式(\ref{eq:2.9})(\ref{eq:2.10})の両方を満たしているかを確認するのはさらに労力が必要となる.(この本ではやりたきゃ一人で時間をかけてやってどうぞと記載してある.)また,物理でSolitonと使われるとき大体はSolitary waveも含めてそう呼ぶ慣習があり,重要なことはその違いを理解していることである.研究等なんらかの場合に厳密にSolitonであることを示す必要がある場合には式(\ref{eq:2.8})(\ref{eq:2.9})(\ref{eq:2.10})の要請を確かめられれば良い.一応逆散乱法やバックグラウンド変換などといったエレガントな方法も存在するということも紹介しておく.
 
 
 \end{document}
