@@ -13,15 +13,16 @@
 
 %\tableofcontents
 
-\makeatletter
-\@addtoreset{equation}{section}
-\def\theequation{\thesection.\arabic{equation}}
-\makeatother
+%\makeatletter
+%\@addtoreset{equation}{section}
+%\def\theequation{\thesection.\arabic{equation}}
+%\makeatother
 
 \addtolength{\fullwidth}{-26truemm} %全体の幅(ヘッダ部の幅)を既定値から26mm小さくする
 \setlength{\textwidth}{\fullwidth}  %本文の幅(textwidth)を全体の幅(=ヘッダ部の幅)にそろえる
 \setlength{\evensidemargin}{10truemm}   %偶数ページの左余白を10mm(+1インチ)にする
 \setlength{\oddsidemargin}{10truemm}    %奇数ページの左余白を10mm(+1インチ)にする
+\chapter{Preface cum introduction}
 
 \chapter{CLASSICAL SOLITONS AND SOLITARY WAVES}
 \begin{itembox}[l]{目的}
@@ -66,6 +67,7 @@
 \section{Solitary waves and solitons}
 先に述べたようにSolitonとSolitary waveは非線形の波動方程式においてどちらも局在化した特別な特徴をもつ解でありその区別はどのようにできるかを学ぶ.
 
+\subsection{Case of the simplest wave equation}
 まず,よくある最もシンプルな線形かつ非分散的である波動方程式
 \begin{align}
     \Box\phi & =\partial^{\mu}\partial_{\mu}\phi\nonumber                                                                             \\
@@ -90,10 +92,9 @@
 \begin{screen}
     \begin{description}
         \item[(i)] 1つのパケットが歪まず,形を維持したまま一定速度で移動する.
-        \item[(ii)] いくつかのパケットが互いに衝突したとしてもその進行速度と形が維持される.
+        \item[(ii)] いくつかのパケットが互いに衝突したとしてもその進行速度と形が維持される.(別ファイルに添付したGifを参照.)
     \end{description}
 \end{screen}
-しかしながら大半の波動方程式は非線形校を含んでいたり,分散的であったりと複雑で全ての波動方程式が性質(i),(ii)を満たしているとは限らない.(別ファイルに添付したGifを参照.)
 \begin{figure}[H]
     \centering
     \subfigure[]{%
@@ -102,6 +103,9 @@
         \includegraphics[clip, width=0.45\columnwidth]{figure/2-soliton2.png}}%
     \label{2-soliton}
 \end{figure}
+
+\subsection{Case of Klein-Gordon equation}
+しかしながら大半の波動方程式は非線形校を含んでいたり,分散的であったりと複雑で全ての波動方程式が性質(i),(ii)を満たしているとは限らない.
 
 そのうちの一つが式(\ref{eq:2.1})に$m^2c^2$の項を加えたKlein-Gordon方程式
 \begin{align}
@@ -125,7 +129,9 @@
 \begin{align}
     \left(\frac{1}{c^{2}} \frac{\partial^{2}}{\partial t^{2}}-\frac{\partial^{2}}{\partial x^{2}}\right) \phi(x, t)+\phi^{3}(x, t)=0\label{eq:2.4}
 \end{align}
-これらを踏まえて一般的にはSolitonとSolitary-waveの以下のような区別がなされている.
+
+\subsection{View of energy density}
+先の議論を踏まえて一般的にはSolitonとSolitary-waveの以下のような区別がなされている.
 \begin{screen}
     \begin{itemize}
         \item (i)の特徴を満たすもの $\cdots$ {\bf Solitary-wave}, {\bf Soliton}
@@ -162,13 +168,14 @@
 \end{align}
 で与えられる.この$E[\phi]$は$\phi(x,t)=\pm 1$で最小値をとるから,localizeすると言いたければ,十分遠方$x\rightarrow \infty$で$\phi(x,t)\rightarrow \pm 1$となる必要がある.
 
-
+\subsubsection{Solitary wave}
 localizeするとはどういうことかが普遍的に述べられた上でエネルギー密度の観点からSolitary waveとは何かを考える.Solitary waveは場の方程式においてlocalizeしているという特異性だけでなく次のような時空依存のエネルギー密度を描くものと定義できる.
 \begin{align}
     \epsilon(\bm{x},t)=\epsilon(\bm{x}-\bm{u}t)\quad (\bm{u}: \text{速度ベクトル})\label{eq:2.8}
 \end{align}
 これは明らかに場が作るエネルギー密度のパケットが一定の速度で形が変わらずに移動するという(i)の特徴を表現できており,これがまさにSolitary  waveの定義とできる.
 
+\subsubsection{Soliton}
 次にSolitonについてもエネルギー密度の観点からその定義を考える.Solitonは先の議論の特徴(i)だけでなく特徴(ii)に重きを置く必要がある.特徴(ii)はいくつかのパケットが互いに衝突したとしてもその進行速度と形が維持されるということであった.そこで以下のような状況設定で議論を進める.
 \begin{itemize}
     \item 非線形波動方程式でlocalizeした$N$個のsolitary wave解$\epsilon_0(\bm{x}-\bm{u}t)$で解が構成されている.
@@ -179,9 +186,91 @@ localizeするとはどういうことかが普遍的に述べられた上でエ
      & \varepsilon(x, t) \rightarrow \sum_{i=1}^{N} \varepsilon_{0}\left(x-a_{i}-u_{i} t+\delta_{i}\right), \quad \text { as } t \rightarrow+\infty\label{eq:2.10} \\
      & \qquad \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\bm{\delta_i}:\text{定ベクトル})\nonumber
 \end{align}
-となる.これは$t\rightarrow -\infty$であるいくつかのSolitary waveのエネルギーパケットをもった解が一定速度かつ歪みなく進んだのち$t\rightarrow \infty$で時間発展したとしても形が変わらないという特徴(ii)の描像を描けているといえる.つまりこのエネルギー密度の関係式を満たすものがSolitonであると定義できる.
+となる.これは$t\rightarrow -\infty$であるいくつかのSolitary waveのエネルギーパケットをもった解が一定速度かつ歪みなく進んだのち$t\rightarrow \infty$で時間発展したとしても形が変わらないという特徴(ii)の描像を描けているといえる.つまりこのエネルギー密度の関係式を満たすものがSolitonであると定義できる.\\
 
 以上でSolitonとSolitary waveの区別ができるようになった.そしてこの世界には定常解を含めてSolitary waveは割と存在する.しかしながらSolitonは式(\ref{eq:2.10})の要請の縛りが強くほとんど存在しないというのが現状である.そもそも非線形場の方程式に対してSolitary waveの要請式(\ref{eq:2.8})を確認するのも割と大変な作業となる.そして式(\ref{eq:2.9})(\ref{eq:2.10})の両方を満たしているかを確認するのはさらに労力が必要となる.(この本ではやりたきゃ一人で時間をかけてやってどうぞと記載してある.)また,物理でSolitonと使われるとき大体はSolitary waveも含めてそう呼ぶ慣習があり,重要なことはその違いを理解していることである.研究等なんらかの場合に厳密にSolitonであることを示す必要がある場合には式(\ref{eq:2.8})(\ref{eq:2.9})(\ref{eq:2.10})の要請を確かめられれば良い.一応逆散乱法やバックグラウンド変換などといったエレガントな方法も存在するということも紹介しておく.
 
+\section{Some solitary waves in two dimensions}
+\subsection{Static Solitary wave and boundary conditions}
+解が時間依存していない定常解もSolitary waveであったからそのいくつか簡単な例について2次元系で見ていく.
+
+以下のようなローレンツ不変なラグランジアン密度
+\begin{align}
+    \mathscr{L}(x, t)=\frac{1}{2}(\phi)^{2}-\frac{1}{2}\left(\phi^{\prime}\right)^{2}-U(\phi)
+\end{align}
+を考える.\footnote{プライム記号("$'$")は時間微分を表しドット記号("$\dot{ }$")は空間微分を表す.}なおここでは光速$c=1$とし,ポテンシャル$U(\phi)$は$\phi$の関数で最小値が0のものとする.作用の変分をとれば
+\begin{align}
+    \delta\left(\int dt \int_{-x}^{x}dx\mathscr{L}(x,t)\right)=0
+\end{align}
+となりこの内の一つから以下の波動方程式が導かれる.
+\begin{align}
+    \square \phi \equiv \ddot{\phi}-\phi^{''}=-\frac{\partial U}{\partial \phi}(x, t)\label{eq:2.13}
+\end{align}
+そしてエネルギーの関数は
+\begin{align}
+    E[\phi]=\int_{-\infty}^{\infty} \mathrm{d} x\left[\frac{1}{2}(\phi)^{2}+\frac{1}{2}\left(\phi^{\prime}\right)^{2}+U(\phi)\right]\label{eq:2.14}
+\end{align}
+となる.そして$U(\phi)$が$M(\geq1)$個の点で最小値0をとする.
+\begin{align}
+    U(\phi)=0 \quad \text { for } \quad \phi=g^{(i)} ; \quad i=1, \ldots, M\label{eq:2.15}
+\end{align}
+また,仮に場$\phi(x,t)$が定数であれば式(\ref{eq:2.14})のエネルギーも最小値$E[\phi]=0$を
+\begin{align}
+    \phi=g^{(i)} ; \quad i=1, \ldots, M
+\end{align}
+でとる.
+
+いま我々は簡単のために定常解のSolitary waveを考えるから式(\ref{eq:2.14})において時間の項を消せば
+\begin{align}
+    \phi^{\prime \prime}(x) \equiv \frac{\partial^{2} \phi}{\partial x^{2}}=+\frac{\partial U}{\partial \phi}(x)\label{eq:2.17}
+\end{align}
+となる.
+
+さらにSolitary waveは有限のエネルギーでlocalizeしたエネルギー密度をもっているという要請をこれに課す.前セクションで述べたが,localizeするには任意の時刻$t$において十分遠方($x\rightarrow \pm\infty$)で最小値$E[\phi_i]$に漸近する必要があった.(($\partial\phi/\partial x\rightarrow 0$も.))いま式(\ref{eq:2.15})で最小値をとることがわかっているから,localizeするという要請から以下の境界条件が成立する.
+\begin{screen}
+    \begin{align*}
+        U(\phi)\rightarrow0 \quad \text{and} \quad \left(\frac{\partial\phi}{\partial x}\right)\rightarrow 0,\qquad \text{as}\quad x\rightarrow \pm \infty
+    \end{align*}
+\end{screen}
+
+\subsection{Solve the equation (\ref{eq:2.17})}
+式(\ref{eq:2.17})をよく見ればニュートンの第二法則と同じになっていることに気付く.というのも$x\rightarrow t$,場$\phi$を質点(analogue particle)の位置座標と捉えればこれは単なるポテンシャルが$-U(\phi)$の運動方程式である.このことからこの運動の全エネルギーは
+\begin{align}
+    W \equiv \frac{1}{2}\left(\frac{\mathrm{d} \phi}{\mathrm{d}x}\right)^{2}-U(\phi)\label{eq:2.18}
+\end{align}
+となることがわかる.ここで先に述べた境界条件を課せば$W=0$のゼロエネルギーとなる.また式(\ref{eq:2.14})で与えられる実際の系においてのエネルギーに立ち返ってみても
+\begin{align}
+    E=\int_{-\infty}^{\infty}\left[\frac{1}{2}\left(\frac{\mathrm{d}\phi}{\mathrm{d}x}\right)^2+U(\phi)\right]\mathrm{d}x
+\end{align}
+となり,これは明らかにanalogue粒子の運動の作用積分と同じ形になっていることがわかる.したがって,この定常解は粒子のゼロエネルギー($W=0$)の軌道の有限作用に対応しているといえる.
+
+さらに式(\ref{eq:2.17})を解いてみる.両辺に$\phi'$をかけて積分すれば
+\begin{align}
+    \phi'\phi''=\frac{\partial U}{\partial\phi}\nonumber                                            \\
+    \Rightarrow \int\phi'\phi''\mathrm{d}x=\int\frac{\partial U}{\partial \phi}\mathrm{d}x\nonumber \\
+    \Rightarrow \frac{1}{2}\left(\phi'\right)^2=U(\phi)\label{eq:2.20}
+\end{align}
+となる.(なおここで境界条件である$x\rightarrow \pm \infty$で$U(\phi)\rightarrow 0, (\partial \phi/\partial x)\rightarrow 0$を課すことで積分定数はゼロと定まっている.)式(\ref{eq:2.20})はまさにanalogue粒子におけるビリアル定理に対応していることがみてとれる.
+
+\subsection{Some potential}
+\subsubsection{Case of potential which have unique minimum}
+先の結果を踏まえていくつかのポテンシャル上でanalogue粒子がどのような振る舞いをするかをみてみる.まず図\ref{potential1}のような$\phi=\phi_1$で最大値$U(\phi_1)=0$を取るようなポテンシャルを考える.このときanalogue粒子のゼロエネルギーの軌道はポテンシャル上で$\phi=\phi_1$で最大値0をとりその他は常に負の値をとる.ここでSolitary waveの境界条件に立ち返ってみると,十分遠方($x\rightarrow \pm \infty$)で$\phi=\phi_1$となる必要があるが,図を見てもわかるように例えば$x\rightarrow -\infty$で$\phi=\phi_1$だった場合に$x\rightarrow \infty$で$\phi=\phi_1$にもう一度なることは決してできない.というのも式(\ref{eq:2.18})において$W=0$であったから,仮に$\phi=\phi_1$から右か左のどちらかに転がっていってしまった場合常に$[-U()\phi)]$は負の値で小さくなっていくから$W=0$に保つために運動エネルギー項($1/2(\mathrm{d}\phi/\mathrm{dx})^2$)は常に正で値が大きくなる.つまり一度$\phi=\phi_1$から進んだら粒子は止まることができなくなる.つまりこのポテンシャルでは解かずしてSolitary waveにはなり得ないということがわかる.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=5cm]{figure/potential1.png}
+    \caption{(a)}
+    \label{potential1}
+\end{figure}
+
+\subsubsection{Case of potential which have degenerate minima}
+次に2個以上最小値が存在する例として図\ref{potential2}のようなポテンシャルを考える.今回の場合$\phi=\phi_1,\phi_2,\phi_3$の3つの場所で最小値をとる.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=5cm]{figure/potential2.png}
+    \caption{(b)}
+    \label{potential2}
+\end{figure}
 
 \end{document}
