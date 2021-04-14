@@ -17,6 +17,7 @@
 %\@addtoreset{equation}{section}
 %\def\theequation{\thesection.\arabic{equation}}
 %\makeatother
+\newcommand{\ctext}[1]{\raise0.2ex\hbox{\textcircled{\scriptsize{#1}}}}
 
 \addtolength{\fullwidth}{-26truemm} %全体の幅(ヘッダ部の幅)を既定値から26mm小さくする
 \setlength{\textwidth}{\fullwidth}  %本文の幅(textwidth)を全体の幅(=ヘッダ部の幅)にそろえる
@@ -188,11 +189,11 @@ localizeするとはどういうことかが普遍的に述べられた上でエ
 \end{align}
 となる.これは$t\rightarrow -\infty$であるいくつかのSolitary waveのエネルギーパケットをもった解が一定速度かつ歪みなく進んだのち$t\rightarrow \infty$で時間発展したとしても形が変わらないという特徴(ii)の描像を描けているといえる.つまりこのエネルギー密度の関係式を満たすものがSolitonであると定義できる.\\
 
-以上でSolitonとSolitary waveの区別ができるようになった.そしてこの世界には定常解を含めてSolitary waveは割と存在する.しかしながらSolitonは式(\ref{eq:2.10})の要請の縛りが強くほとんど存在しないというのが現状である.そもそも非線形場の方程式に対してSolitary waveの要請式(\ref{eq:2.8})を確認するのも割と大変な作業となる.そして式(\ref{eq:2.9})(\ref{eq:2.10})の両方を満たしているかを確認するのはさらに労力が必要となる.(この本ではやりたきゃ一人で時間をかけてやってどうぞと記載してある.)また,物理でSolitonと使われるとき大体はSolitary waveも含めてそう呼ぶ慣習があり,重要なことはその違いを理解していることである.研究等なんらかの場合に厳密にSolitonであることを示す必要がある場合には式(\ref{eq:2.8})(\ref{eq:2.9})(\ref{eq:2.10})の要請を確かめられれば良い.一応逆散乱法やバックグラウンド変換などといったエレガントな方法も存在するということも紹介しておく.
+以上でSolitonとSolitary waveの区別ができるようになった.そしてこの世界には静的解を含めてSolitary waveは割と存在する.しかしながらSolitonは式(\ref{eq:2.10})の要請の縛りが強くほとんど存在しないというのが現状である.そもそも非線形場の方程式に対してSolitary waveの要請式(\ref{eq:2.8})を確認するのも割と大変な作業となる.そして式(\ref{eq:2.9})(\ref{eq:2.10})の両方を満たしているかを確認するのはさらに労力が必要となる.(この本ではやりたきゃ一人で時間をかけてやってどうぞと記載してある.)また,物理でSolitonと使われるとき大体はSolitary waveも含めてそう呼ぶ慣習があり,重要なことはその違いを理解していることである.研究等なんらかの場合に厳密にSolitonであることを示す必要がある場合には式(\ref{eq:2.8})(\ref{eq:2.9})(\ref{eq:2.10})の要請を確かめられれば良い.一応逆散乱法やバックグラウンド変換などといったエレガントな方法も存在するということも紹介しておく.
 
 \section{Some solitary waves in two dimensions}
 \subsection{Static Solitary wave and boundary conditions}
-解が時間依存していない定常解もSolitary waveであったからそのいくつか簡単な例について2次元系で見ていく.
+解が時間依存していない静的解もSolitary waveであったからそのいくつか簡単な例について2次元系で見ていく.
 
 以下のようなローレンツ不変なラグランジアン密度
 \begin{align}
@@ -220,7 +221,7 @@ localizeするとはどういうことかが普遍的に述べられた上でエ
 \end{align}
 でとる.
 
-いま我々は簡単のために定常解のSolitary waveを考えるから式(\ref{eq:2.14})において時間の項を消せば
+いま我々は簡単のために静的解のSolitary waveを考えるから式(\ref{eq:2.14})において時間の項を消せば
 \begin{align}
     \phi^{\prime \prime}(x) \equiv \frac{\partial^{2} \phi}{\partial x^{2}}=+\frac{\partial U}{\partial \phi}(x)\label{eq:2.17}
 \end{align}
@@ -242,7 +243,7 @@ localizeするとはどういうことかが普遍的に述べられた上でエ
 \begin{align}
     E=\int_{-\infty}^{\infty}\left[\frac{1}{2}\left(\frac{\mathrm{d}\phi}{\mathrm{d}x}\right)^2+U(\phi)\right]\mathrm{d}x
 \end{align}
-となり,これは明らかにanalogue粒子の運動の作用積分と同じ形になっていることがわかる.したがって,この定常解は粒子のゼロエネルギー($W=0$)の軌道の有限作用に対応しているといえる.
+となり,これは明らかにanalogue粒子の運動の作用積分と同じ形になっていることがわかる.したがって,この静的解は粒子のゼロエネルギー($W=0$)の軌道の有限作用に対応しているといえる.
 
 さらに式(\ref{eq:2.17})を解いてみる.両辺に$\phi'$をかけて積分すれば
 \begin{align}
@@ -264,7 +265,19 @@ localizeするとはどういうことかが普遍的に述べられた上でエ
 \end{figure}
 
 \subsubsection{Case of potential which have degenerate minima}
-次に2個以上最小値が存在する例として図\ref{potential2}のようなポテンシャルを考える.今回の場合$\phi=\phi_1,\phi_2,\phi_3$の3つの場所で最小値をとる.
+次に2個以上最小値が存在する例として図\ref{potential2}のようなポテンシャルを考える.このポテンシャルは$\phi=\phi_1,\phi_2,\phi_3$の3つの場所で最小値をとる.境界条件を満たすには$x\rightarrow \pm \infty$で$\phi$が3つの値のどれかになる必要があるが,今回の場合それが可能である.考えうるパターンとしては以下の4つに限られる.
+\begin{enumerate}
+    \item $x\rightarrow -\infty$で$\phi=\phi_1$をスタートし,$x\rightarrow \infty$で$\phi=\phi_2$となる.
+    \item 1.の進行方向が逆パターン.
+    \item $x\rightarrow -\infty$で$\phi=\phi_2$をスタートし,$x\rightarrow \infty$で$\phi=\phi_3$となる.
+    \item 3.の進行方向が逆パターン.
+\end{enumerate}
+これは$x\rightarrow -\infty$で$\phi_1$にスタートし,$x\rightarrow \infty$で$\phi_2$に至る場合を例にして考えると境界条件から$\phi_2$に至ったときには$U(\phi)$と$\mathrm{d}U/\mathrm{d}\phi$はゼロとなっていることに起因する.式(\ref{eq:2.20})及び式(\ref{eq:2.17})において$\phi'$の速度や加速度などは全て
+\begin{align}
+    \phi^{'''}=\frac{d}{\mathrm{~d} x}\left(\frac{\mathrm{d} U(\phi)}{\mathrm{d} \phi}\right)=\frac{\mathrm{d}^{2} U}{\mathrm{d} \phi^{2}} \phi^{'}=0\nonumber \\
+    \phi^{''''}=\frac{\mathrm{d}^{2} U}{\mathrm{d} \phi^{2}} \phi^{\prime \prime}+\frac{\mathrm{d}^{3} U}{\mathrm{~d} \phi^{3}}\left(\phi^{'}\right)^{2}=0 \text { etc. }
+\end{align}
+というようにゼロになって消えてしまう.したがって$\phi_2$を超えて$\phi_3$に進んだり,$\phi_1$に再び戻ったりというパターンは完全になくなり,上記の4パターンに限られる.そしてこの4パターンでのみSolitary waveが存在しうるということになる.
 
 \begin{figure}[H]
     \centering
@@ -272,5 +285,119 @@ localizeするとはどういうことかが普遍的に述べられた上でエ
     \caption{(b)}
     \label{potential2}
 \end{figure}
+
+以上2つのポテンシャルの例から一般的に以下のようなことが言える.
+\begin{screen}
+    \begin{description}
+        \item[(i)] $U(\phi)$の最小値が1つの場合,静的なSolitary waveは存在しない.
+        \item[(ii)] $U(\phi)$が$n$個の最小値を保つ場合,静的なSolitary waveは$2(n-1)$個存在する.
+    \end{description}
+\end{screen}
+
+\subsection{Solve the equation (\ref{eq:2.20}) with specific potential}
+式(\ref{eq:2.20})を実際にポテンシャルを当てはめて解いてみる.
+\begin{align}
+    \frac{1}{2}(\phi')^2=U(\phi)\nonumber                                                        \\
+    \Rightarrow \frac{\mathrm{d}\phi}{\mathrm{d}x}=\pm\left[2U(\phi)\right]^{1/2}\label{eq:2.22} \\
+    \Rightarrow x-x_0=\pm\int_{\phi(x_0)}^{\phi(x)}\dfrac{d\bar{\phi}}{[2U(\bar{\phi})]^{1/2}}\label{eq:2.23}
+\end{align}
+
+
+\subsubsection{Case of static solution}
+まず静的解の場合について求めるために'kink'と呼ばれる以下のラグランジアン密度を考える.
+\begin{align}
+    \mathscr{L}(x, t)=\frac{1}{2}\left(\frac{\partial \phi}{\partial t}\right)^{2}-\frac{1}{2}\left(\frac{\partial \phi}{\partial x}\right)^{2}-U(\phi)\nonumber \\
+    U(\phi)=\frac{1}{4}\lambda(\phi^2-m^2/\lambda)^2
+\end{align}
+このポテンシャルが作る運動方程式は
+\begin{align}
+    \phi''-\phi'=m^2\phi-\lambda\phi^3\label{eq:2.25}
+\end{align}
+となる.静的なため時間の項が消え式(\ref{eq:2.25})は
+\begin{align}
+    \phi''=\frac{\mathrm{d}U}{\mathrm{d}\phi}=\lambda\phi^3-m^2\phi
+\end{align}
+となり,これを式(\ref{eq:2.23})に代入すれば
+\begin{align}
+    x-x_{0}=\pm \int_{\phi(x_0)}^{\phi(x)}\dfrac{\mathrm{d}\bar{\phi}}{\sqrt{\lambda/2}(\bar{\phi}^2-m^2/\lambda)}
+\end{align}
+となる.いま$\phi(x_0)=0$とすれば
+\begin{align}
+    \phi(x)=\pm(m/\sqrt{\lambda})\tanh\left[(m/\sqrt{2})(x-x_0)\right]\label{eq:2.28}
+\end{align}
+を得る.そしてこのプラス側をグラフにプロットすれば図\ref{kink_phi}のようなkink解ができあがる.これを見ると明らかにSolitary waveとして$x_0$が変わるとしても形が変わらないまま並進移動することが伺える.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{figure/kink_phi.png}
+    \caption{kink解($\phi(x)$)}
+    \label{kink_phi}
+\end{figure}
+また,kink解のエネルギー密度は
+\begin{align}
+    \epsilon(x) & =\frac{1}{2}(\phi')^2+U(\phi)=2U(\phi),\quad \text{using (\ref{eq:2.22})} \\
+                & =(m^4/2\lambda)\mathrm{sech^4}\left[m(x-x_0)/\sqrt{2}\right]
+\end{align}
+となり,これをグラフにプロットすれば図\ref{kink_energy}のようになり確かにlocalizeしていることがわかる.
+
+また,kinkのエネルギー密度の合計はclassical kinkmass $M_{\mathrm{cl}}$と呼ばれ
+\begin{align}
+    M_{\mathrm{cl}}=\int_{-\infty}^{\infty} \mathrm{d}x \epsilon(x)=\dfrac{2\sqrt{2}}{3}\frac{m^3}{\lambda}
+\end{align}
+で与えられ,有限の値を取る.
+
+以上のことから正のkinkや負のantikinkはまさに真のSolitary waveであるといえる.しかしながらkinkやantikinkはどちらもSolitonではない.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{figure/kink_energy.png}
+    \caption{kink解($\epsilon(x)$)}
+    \label{kink_energy}
+\end{figure}
+
+\subsubsection{Lorentz-transform to the static solution}
+いま求めたkink解はローレンツ不変な量であることがわかっており,静的な解をローレンツ変換することによって動くkink解を得ることができる.したがって式(\ref{eq:2.28})を速度$1>u>-1$で動く系でローレンツ変換をすれば
+\begin{align}
+    \phi_{u}(x, t)=\frac{m}{\sqrt{\lambda}} \tanh \left[\frac{m}{\sqrt{2}}\left(\frac{\left(x-x_{0}\right)-u t}{\sqrt{1-u^{2}}}\right)\right]\label{eq:2.32}
+\end{align}
+となる.(式(\ref{eq:2.25})に代入すればこれが解になっていることも確かめられる.)またこの動的なkink解の幅は$\sqrt{1-u^2}/m$となっており,ローレンツ収縮が起きていることも見て取れる.実際,時間依存するkink解(\ref{eq:2.32})のエネルギーを計算すると
+\begin{align}
+    E\left[\phi_{u}\right]= & \int_{-x}^{x} \mathrm{~d} x\left[\frac{1}{2}\left(\phi_{u}\right)^{2}+\frac{1}{2}\left(\phi_{u}^{\prime}\right)^{2}+U\left(\phi_{u}\right)\right]\nonumber                           \\
+    =                       & \int_{-x}^{x} \mathrm{~d} x\left[\left(\frac{m^{4}}{4 \lambda} \frac{u^{2}}{1-u^{2}}+\frac{m^{4}}{4 \lambda} \frac{1}{1-u^{2}}+\frac{m^{4}}{4 \lambda}\right)\right.\nonumber        \\
+                            & \qquad\ \ \ \ \ \ \ \ \ \ \ \  \times\left.\operatorname{sech}^{4}\left(\frac{m}{\sqrt{2}} \frac{x-x_{0}-u t}{\sqrt{1-u^{2}}}\right)\right]\nonumber                                 \\
+                            & =\int_{-\infty}^{\infty} \mathrm{d} x \frac{m^{4}}{2 \lambda\left(1-u^{2}\right)} \operatorname{sech}^{4}\left(\frac{m}{\sqrt{2}} \frac{x-x_{0}-u t}{\sqrt{1-u^{2}}}\right)\nonumber \\
+                            & =\frac{2 \sqrt{2}}{3} \frac{m^{3}}{\lambda} \frac{1}{\sqrt{1-u^{2}}}\nonumber                                                                                                        \\
+                            & =\frac{M_{\mathrm{cl}}}{\sqrt{1-u^{2}}}
+\end{align}
+となり,静的な$M_{\mathrm{cl}}$に対してローレンツ収縮が起きていることがわかる.
+
+\subsubsection{Case of $U(\phi)$ has three degenerate minima}
+$U(\phi)$が3つの最小値をもつ縮退した例として以下のポテンシャルを考える.
+\begin{align*}
+    U(\phi)=\frac{1}{2} \phi^{2}\left(\phi^{2}-1\right)^{2}
+\end{align*}
+この最小値は$\phi=0,\pm1$で縮退しており境界条件は
+\begin{align*}
+    \phi=[-1,0],[0,1],[1,0] \text { and }[0,-1] \quad \text { at } x=[-\infty, \infty]
+\end{align*}
+のように設定できる.また具体的な計算は行わないが式(\ref{eq:2.17})にこれを代入し解いた結果は
+\begin{align}
+    \phi=\pm\left(1+e^{\pm 2 x}\right)^{-\frac{1}{2}}
+\end{align}
+となる.この解もlocalizeしたエネルギー密度をもち,全エネルギーは有限となる.
+
+\subsection{Static solutions to system of coupled scalar fields}
+先の議論では1つの場$\phi$に対する解の考察であったが,2つ以上の場がcoupleしてできる静的な解についても考察する.以下のようなラグランジアン密度を考える.
+\begin{align}
+    \mathscr{L}(\mathrm{x}, \mathrm{t})=\sum_{\mathrm{i}=1}^{\mathrm{N}} \frac{1}{2}\left(\left(\frac{\partial \phi_{\mathrm{i}}}{\partial \mathrm{t}}\right)^{2}-\left(\frac{\partial \phi_{\mathrm{i}}}{\partial \mathrm{t}}\right)^{2}\right)-\mathrm{U}\left(\left\{\phi_{\mathrm{i}}\right\}\right)
+\end{align}
+このとき場の方程式は
+\begin{align}
+    \square \phi_{i}=-\frac{\partial U}{\partial \phi_{i}} ; \quad i=1, \ldots, N
+\end{align}
+となり,静的な場合時間の項を削除して
+\begin{align}
+    \phi''=\frac{\partial U}{\partial\phi_i}
+\end{align}
+となる.これもよく見れば前回と同様にanalogue粒子の描像と捉え直すことが可能で
+
 
 \end{document}
