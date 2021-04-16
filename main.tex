@@ -307,7 +307,7 @@ localizeするとはどういうことかが普遍的に述べられた上でエ
 まず静的解の場合について求めるために'kink'と呼ばれる以下のラグランジアン密度を考える.
 \begin{align}
     \mathscr{L}(x, t)=\frac{1}{2}\left(\frac{\partial \phi}{\partial t}\right)^{2}-\frac{1}{2}\left(\frac{\partial \phi}{\partial x}\right)^{2}-U(\phi)\nonumber \\
-    U(\phi)=\frac{1}{4}\lambda(\phi^2-m^2/\lambda)^2
+    U(\phi)=\frac{1}{4}\lambda(\phi^2-m^2/\lambda)^2\label{eq:2.24}
 \end{align}
 このポテンシャルが作る運動方程式は
 \begin{align}
@@ -345,7 +345,7 @@ localizeするとはどういうことかが普遍的に述べられた上でエ
 \end{align}
 で与えられ,有限の値を取る.
 
-以上のことから正のkinkや負のantikinkはまさに真のSolitary waveであるといえる.しかしながらkinkやantikinkはどちらもSolitonではない.
+以上のことから正のkinkや負のanti-kinkはまさに真のSolitary waveであるといえる.しかしながらkinkやanti-kinkはどちらもSolitonではない.
 \begin{figure}[H]
     \centering
     \includegraphics[width=10cm]{figure/kink_energy.png}
@@ -547,10 +547,39 @@ $U(\phi)$が3つの最小値をもつ縮退した例として以下のポテン�
     \end{description}
 \end{screen}
 
+
 \section{Topological indices}
+本セクションでは時間変化のなかで保存するトポロジカルな指標(Topological indices)とはどのようなものかを具体的に見ていく.なお,Topological indicesは量子場の理論における粒子状態に対する量子数として重要な役割を果たす.
 
+複合場ではなく,1つの場$\phi$が作る(1+1)次元系において話を進める.ポテンシャルは式(\ref{eq:2.24})の
+\begin{align*}
+    \mathscr{L}(x, t)=\frac{1}{2}\left(\frac{\partial \phi}{\partial t}\right)^{2}-\frac{1}{2}\left(\frac{\partial \phi}{\partial x}\right)^{2}-U(\phi)\nonumber \\
+    U(\phi)=\frac{1}{4}\lambda(\phi^2-m^2/\lambda)^2
+\end{align*}
+の状況で考える.このSolitary waveを特徴づけるのは$\phi=\pm/\sqrt{\lambda}$で$U(\phi)=0$となる条件から以下の4つのtopological indicesとなる.
+\begin{align}
+     & \left(\phi(x=-\infty),\phi(x=+\infty)\right)=\nonumber                                                                                                                \\
+     & (-m/\sqrt{\lambda},m/\sqrt{\lambda}),\quad (m/\sqrt{\lambda},-m/\sqrt{\lambda}),\quad (-m/\sqrt{\lambda},-m/\sqrt{\lambda}),\quad (m/\sqrt{\lambda},m/\sqrt{\lambda})
+\end{align}
+これらは左から順にkink解,anti-kink解,定数解$\phi(x)=\mp(m/\sqrt{\lambda})$の4つである.例えば左からkink解,右からanti-kink解が衝突するような状況を考えたときに,衝突後どのような様子を描くかは用意にはわからないが,衝突前も衝突後も$\left(\phi(x=-\infty),\phi(x=+\infty)\right)=(-m/\sqrt{\lambda},-m/\sqrt{\lambda})$というtopologicalセクターに属するということは常にわかる.
 
-
-
+\subsection{Topological charge}
+Topological indicesに関連してTopological chargeという量がしばしば用いられ,本ポテンシャルの場合以下で定義される.
+\begin{align}
+    Q=\frac{\sqrt{\lambda}}{m}[\phi(x=\infty)-\phi(x=-\infty)]
+\end{align}
+また,これに対する保存カレントとして
+\begin{align}
+    k^{\mu}=\frac{\sqrt{\lambda}}{m} \varepsilon^{\mu \nu} \partial_{\nu} \phi;\quad \mu,\nu=0,1;\quad g_{\mu \nu}=
+    \begin{pmatrix}
+        1 & 0  \\
+        0 & -1
+    \end{pmatrix}
+\end{align}
+が挙がる.($\varepsilon^{\mu\nu}$は反対称テンソル.)これらを用いればきれいな形で
+\begin{align}
+    \partial_{\mu} k^{\mu}=0 \quad \text { and } \quad Q=\int_{-\infty}^{\infty} \mathrm{d} x k_{0}
+\end{align}
+を得る.まさにTopological charge $Q$は$(\sqrt{\lambda}/m)\phi(\infty)$と$(\sqrt{\lambda}/m)\phi(\infty)$の値の差であり,$Q=0$または$Q\neq 0$のどちらかを取る.先に上げた4つのtopological indicesのうち$Q\neq0$となるのは$(-m/\sqrt{\lambda},m/\sqrt{\lambda}),(m/\sqrt{\lambda},-m/\sqrt{\lambda})$の2つのkink及びanti-kinkでtopologicalな解と呼ぶ.実際,このtopological chargeが一種の境界条件となっており,$Q\neq0$でtopologicalであれば非自明な静的Solitary wave解を得ることができるということを意味する.これはとても強力で次元が増えようとも,空間変換,ゲージ変換をしようとも具体的な解の計算前に常にtopologyを調べることができるツールとなる.
 
 \end{document}
