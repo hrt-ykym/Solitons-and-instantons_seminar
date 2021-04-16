@@ -197,7 +197,7 @@ localizeするとはどういうことかが普遍的に述べられた上でエ
 
 以下のようなローレンツ不変なラグランジアン密度
 \begin{align}
-    \mathscr{L}(x, t)=\frac{1}{2}(\phi)^{2}-\frac{1}{2}\left(\phi^{\prime}\right)^{2}-U(\phi)
+    \mathscr{L}(x, t)=\frac{1}{2}(\phi)^{2}-\frac{1}{2}\left(\phi^{'}\right)^{2}-U(\phi)
 \end{align}
 を考える.\footnote{プライム記号("$'$")は時間微分を表しドット記号("$\dot{ }$")は空間微分を表す.}なおここでは光速$c=1$とし,ポテンシャル$U(\phi)$は$\phi$の関数で最小値が0のものとする.作用の変分をとれば
 \begin{align}
@@ -209,7 +209,7 @@ localizeするとはどういうことかが普遍的に述べられた上でエ
 \end{align}
 そしてエネルギーの関数は
 \begin{align}
-    E[\phi]=\int_{-\infty}^{\infty} \mathrm{d} x\left[\frac{1}{2}(\phi)^{2}+\frac{1}{2}\left(\phi^{\prime}\right)^{2}+U(\phi)\right]\label{eq:2.14}
+    E[\phi]=\int_{-\infty}^{\infty} \mathrm{d} x\left[\frac{1}{2}(\phi)^{2}+\frac{1}{2}\left(\phi^{'}\right)^{2}+U(\phi)\right]\label{eq:2.14}
 \end{align}
 となる.そして$U(\phi)$が$M(\geq1)$個の点で最小値0をとする.
 \begin{align}
@@ -223,7 +223,7 @@ localizeするとはどういうことかが普遍的に述べられた上でエ
 
 いま我々は簡単のために静的解のSolitary waveを考えるから式(\ref{eq:2.14})において時間の項を消せば
 \begin{align}
-    \phi^{\prime \prime}(x) \equiv \frac{\partial^{2} \phi}{\partial x^{2}}=+\frac{\partial U}{\partial \phi}(x)\label{eq:2.17}
+    \phi^{''}(x) \equiv \frac{\partial^{2} \phi}{\partial x^{2}}=+\frac{\partial U}{\partial \phi}(x)\label{eq:2.17}
 \end{align}
 となる.
 
@@ -274,8 +274,8 @@ localizeするとはどういうことかが普遍的に述べられた上でエ
 \end{enumerate}
 これは$x\rightarrow -\infty$で$\phi_1$にスタートし,$x\rightarrow \infty$で$\phi_2$に至る場合を例にして考えると境界条件から$\phi_2$に至ったときには$U(\phi)$と$\mathrm{d}U/\mathrm{d}\phi$はゼロとなっていることに起因する.式(\ref{eq:2.20})及び式(\ref{eq:2.17})において$\phi'$の速度や加速度などは全て
 \begin{align}
-    \phi^{'''}=\frac{d}{\mathrm{~d} x}\left(\frac{\mathrm{d} U(\phi)}{\mathrm{d} \phi}\right)=\frac{\mathrm{d}^{2} U}{\mathrm{d} \phi^{2}} \phi^{'}=0\nonumber \\
-    \phi^{''''}=\frac{\mathrm{d}^{2} U}{\mathrm{d} \phi^{2}} \phi^{\prime \prime}+\frac{\mathrm{d}^{3} U}{\mathrm{~d} \phi^{3}}\left(\phi^{'}\right)^{2}=0 \text { etc. }
+    \phi^{'''}=\frac{d}{\mathrm{d} x}\left(\frac{\mathrm{d} U(\phi)}{\mathrm{d} \phi}\right)=\frac{\mathrm{d}^{2} U}{\mathrm{d} \phi^{2}} \phi^{'}=0\nonumber \\
+    \phi^{''''}=\frac{\mathrm{d}^{2} U}{\mathrm{d} \phi^{2}} \phi^{''}+\frac{\mathrm{d}^{3} U}{\mathrm{d} \phi^{3}}\left(\phi^{'}\right)^{2}=0 \text { etc. }
 \end{align}
 というようにゼロになって消えてしまう.したがって$\phi_2$を超えて$\phi_3$に進んだり,$\phi_1$に再び戻ったりというパターンは完全になくなり,上記の4パターンに限られる.そしてこの4パターンでのみSolitary waveが存在しうるということになる.
 
@@ -360,8 +360,8 @@ localizeするとはどういうことかが普遍的に述べられた上でエ
 \end{align}
 となる.(式(\ref{eq:2.25})に代入すればこれが解になっていることも確かめられる.)またこの動的なkink解の幅は$\sqrt{1-u^2}/m$となっており,ローレンツ収縮が起きていることも見て取れる.実際,時間依存するkink解(\ref{eq:2.32})のエネルギーを計算すると
 \begin{align}
-    E\left[\phi_{u}\right]= & \int_{-x}^{x} \mathrm{~d} x\left[\frac{1}{2}\left(\phi_{u}\right)^{2}+\frac{1}{2}\left(\phi_{u}^{\prime}\right)^{2}+U\left(\phi_{u}\right)\right]\nonumber                           \\
-    =                       & \int_{-x}^{x} \mathrm{~d} x\left[\left(\frac{m^{4}}{4 \lambda} \frac{u^{2}}{1-u^{2}}+\frac{m^{4}}{4 \lambda} \frac{1}{1-u^{2}}+\frac{m^{4}}{4 \lambda}\right)\right.\nonumber        \\
+    E\left[\phi_{u}\right]= & \int_{-x}^{x} \mathrm{d} x\left[\frac{1}{2}\left(\phi_{u}\right)^{2}+\frac{1}{2}\left(\phi_{u}^{'}\right)^{2}+U\left(\phi_{u}\right)\right]\nonumber                                 \\
+    =                       & \int_{-x}^{x} \mathrm{d} x\left[\left(\frac{m^{4}}{4 \lambda} \frac{u^{2}}{1-u^{2}}+\frac{m^{4}}{4 \lambda} \frac{1}{1-u^{2}}+\frac{m^{4}}{4 \lambda}\right)\right.\nonumber         \\
                             & \qquad\ \ \ \ \ \ \ \ \ \ \ \  \times\left.\operatorname{sech}^{4}\left(\frac{m}{\sqrt{2}} \frac{x-x_{0}-u t}{\sqrt{1-u^{2}}}\right)\right]\nonumber                                 \\
                             & =\int_{-\infty}^{\infty} \mathrm{d} x \frac{m^{4}}{2 \lambda\left(1-u^{2}\right)} \operatorname{sech}^{4}\left(\frac{m}{\sqrt{2}} \frac{x-x_{0}-u t}{\sqrt{1-u^{2}}}\right)\nonumber \\
                             & =\frac{2 \sqrt{2}}{3} \frac{m^{3}}{\lambda} \frac{1}{\sqrt{1-u^{2}}}\nonumber                                                                                                        \\
@@ -395,9 +395,162 @@ $U(\phi)$が3つの最小値をもつ縮退した例として以下のポテン�
 \end{align}
 となり,静的な場合時間の項を削除して
 \begin{align}
-    \phi''=\frac{\partial U}{\partial\phi_i}
+    \phi''=\frac{\partial U}{\partial\phi_i}\label{eq:2.37}
 \end{align}
-となる.これもよく見れば前回と同様にanalogue粒子の描像と捉え直すことが可能で
+となる.これもよく見れば前回と同様に$x\rightarrow t$, $\phi_i\rightarrow x_i$とすればポテンシャル$[-U(\phi)]$のanalogue粒子の描像(有限作用,ゼロエネルギーの軌道)と捉え直すことが可能となる.しかし1つの場の場合と異なる点が以下のように2点ある.
+\begin{description}
+    \item[(i)] 1つの場の場合は$U(\phi)$の最小値が1つのとき,$t\rightarrow -\infty$で運動エネルギーが常に正となり二度とスタート地点に戻ることはなく,Solitary waveが存在し得なかった.しかし複数の場がある場合は$N$次元$\phi_i$空間において同様に運動エネルギーが正のままだが,閉曲線に沿って再びスタート地点に戻る可能性がある.
+    \item[(ii)] 複数の場があるがゆえに式(\ref{eq:2.37})において具体的な$\phi_i$の関数を定めるための積分が容易にできない.複数の場においても積分ができるのは力学との対応関係から,ポテンシャルが中心力ポテンシャルの形になるもの(極座標系でかくと簡単になる),つまり本文においては$\phi_i$の回転のもとで不変性が保てるものである.(内部対称性(internal symmetry))
+\end{description}
+
+\subsubsection{How to solve}
+実際に式(\ref{eq:2.37})を解くことを試みる.まず我々がすべきことは$N$次元$\phi_i$空間におけるanalogue粒子の軌道をみつけることである.というのも$\phi_i$空間における軌道が分かればその軌道に沿って積分を行えば良いからである.
+
+例として2つの場$\phi_1, \phi_2$が作る$U(\phi_1, \phi_2)$について考える.この場合analogue粒子は$\phi_1,\phi_2$平面上を$U(\phi_1,\phi_2)$に沿って移動する.$U(\phi_1,\phi_2)$が点Pおよび点Qの2点で縮退した最小値をとるとすれば,その間をポテンシャルに沿って移動することは前回同様である.その軌道を
+\begin{align}
+    g(\phi_1,\phi_2)=0
+\end{align}
+とすれば
+\begin{align}
+    \frac{\mathrm{d}g(\phi_1,\phi_2)}{\mathrm{d}x}=0\nonumber                                                                                                            \\
+    \Rightarrow \frac{\partial g}{\partial \phi_1}\frac{\mathrm{d}\phi_1}{\mathrm{d}x}+\frac{\partial g}{\partial \phi_2}\frac{\mathrm{d}\phi_2}{\mathrm{d}x}=0\nonumber \\
+    \Rightarrow \frac{\partial g}{\partial \phi_1}\phi_1'+\frac{\partial g}{\partial \phi_2}\phi_2'=0\nonumber                                                           \\
+    \Rightarrow \left(\frac{\partial g}{\partial \phi_{1}}\right)^{2}\left(\phi_{1}^{'}\right)^{2}=\left(\frac{\partial g}{\partial \phi_{2}}\right)^{2}\left(\phi_{2}^{'}\right)^{2}\label{eq:2.39}
+\end{align}
+となる.また,式(\ref{eq:2.37})を両辺積分して
+\begin{align}
+    \frac{1}{2}\left(\phi_{i}^{'}\right)^{2}=\int \frac{\partial U\left(\phi_{1}, \phi_{2}\right)}{\partial \phi_{i}} \mathrm{d} \phi_{i}+A_{i}\quad; \quad i=1,2\label{eq:2.40}
+\end{align}
+を得る.そして式(\ref{eq:2.39})を式(\ref{eq:2.40})に代入すれば
+\begin{align}
+    \left(\frac{\partial g}{\partial \phi_{1}}\right)^{2}\left(\int \frac{\partial U\left(\phi_{1}, \phi_{2}\right)}{\partial \phi_{1}} \mathrm{d} \phi_{1}+A_{1}\right)=\left(\frac{\partial g}{\partial \phi_{2}}\right)^{2}\left(\int \frac{\partial U\left(\phi_{1}, \phi_{2}\right)}{\partial \phi_{2}} \partial \phi_{2}+A_{2}\right)\label{eq:2.41}
+\end{align}
+として$g(\phi_1,\phi_2)$と$U(\phi_1,\phi_2)$が直接結びついた軌道の方程式を得る.ここに具体的な軌道$g(\phi_1,\phi_2)$とポテンシャル$U(\phi_1,\phi_2)$を代入していくことで$\phi_1,\phi_2$についてこの方程式を解くことができる.まず軌道としては図\ref{orbit1}に示すように以下の3パターンが考えうる.ここでType Cに関しては$U=0$になることによって運動エネルギーが常に正であるという知見から一見すると起こり得ないため,(引き返すためには点Rで一度運動エネルギーが0になる必要がある.)\footnote{しかし8章で紹介するが静的なSolitary waveではなく,"charge"された解の場合はこのようなことが起こりうる.}以下ではType A及びType Bについて見ていく.
+\begin{description}
+    \item[Type A] $U(\phi_1,\phi_2)$の最小値の1つであるPまたはQのどちらかからスタートし,再びおなじスタート地点に戻る閉曲線軌道.
+    \item[Type B] $U(\phi_1,\phi_2)$の最小値の1つであるPかQのどちらかからスタートし,スタート地点とは異なるPかQの地点にゴールする軌道.
+    \item[Type C] $U(\phi_1,\phi_2)$の最小値の1つであるPまたはQのどちらかからスタートし,任意のPへ引き返す経路.
+\end{description}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7cm]{figure/orbit1.png}
+    \caption{軌道}
+    \label{orbit1}
+\end{figure}
+
+例としてポテンシャルを
+\begin{align}
+     & U\left(\phi_{1}, \phi_{2}\right)=\frac{1}{4}\left(\phi^{2}-1\right)^{2}+\frac{1}{2} m^{2}\left(\phi_{2}\right)^{2}+\frac{1}{4} \lambda\left(\phi_{2}\right)^{4}+\frac{1}{2} d \phi_{2}^{2}\left(\phi_{1}^{2}-1\right)\label{eq:2.42} \\
+     & \qquad \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\lambda, d, m^2 >0)\nonumber
+\end{align}
+とする.これは図\ref{phi4_model}のように$\{\phi_1,\phi_2\}=\{1,0\},\{-1,0\}$の2点で最小値をとる模型となる.(ただし$\lambda \leq (d-m^2)^2$.)
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{figure/phi4_model.png}
+    \caption{}
+    \label{phi4_model}
+\end{figure}
+
+いまType Bの軌道を取る場合について任意定数$\alpha,n$を用いて多項式展開の形で
+\begin{align}
+    g\left(\phi_{1}, \phi_{2}\right)=\left(\phi_{2}\right)^{n}+\alpha\left(\left(\phi_{1}\right)^{2}-1\right)=0\quad ; \quad (n=1,2)\label{eq:2.43}
+\end{align}
+とする.軌道が$\{\phi_1,\phi_2\}=\{-1,0\}$からスタートするとして式(\ref{eq:2.43})を式(\ref{eq:2.41})に代入すれば
+\begin{align}
+     & \left(2 \alpha \phi_{1}\right)^{2}\left(\int_{-1}^{\phi_{1}} \mathrm{d} \tilde{\phi}_{1}\left(\tilde{\phi}_{1}^{3}-\tilde{\phi}_{1}+\mathrm{d} \tilde{\phi}_{2}^{2} \tilde{\phi}_{1}\right)\right)\nonumber                                                \\
+     & \qquad\ \ \ \ \ \ \ \ =\left(n \phi_{2}^{n-1}\right)^{2}\left(\int_{0}^{\phi_{2}} \mathrm{d} \phi_{2}\left(m^{2} \tilde{\phi}_{2}+\lambda \tilde{\phi}_{2}^{3}+\mathrm{d} \tilde{\phi}_{2}\left(\tilde{\phi}_{1}^{2}-1\right)\right)\right)\label{eq:2.44}
+\end{align}
+となる.(なお,境界条件から式(\ref{eq:2.40})において$A_i=0$としている.)またこの積分を実行した上で式(\ref{eq:2.43})の関係から$\phi_1$を消去すれば
+\begin{align}
+     & 4 \alpha^{2}\left(1-\frac{\phi_{2}^{n}}{\alpha}\right)\left(\frac{\phi_{2}^{2 n}}{4 \alpha^{2}}-\frac{n d}{2 \alpha(n+2)} \phi_{2}^{n+2}\right)\nonumber           \\
+     & \qquad\ \ \ \ \ \ \ \ =\frac{1}{2} m^{2} n^{2} \phi_{2}^{2 n}+\frac{1}{4} \lambda n^{2} \phi_{2}^{2 n+2}-\frac{d n^{2} \phi_{2}^{3 n}}{\alpha(n+2)}\label{eq:2.45}
+\end{align}
+
+ここで式(\ref{eq:2.45})の右辺を展開して左辺との係数比較をすることで定数を決定する.
+\begin{description}
+    \item[(i)] $n=2$の場合\\
+          \begin{align}
+              \alpha=\frac{\left(1-2 m^{2}\right)}{d}, \quad \lambda=\frac{d\left(d-2 m^{2}\right)}{1-2 m^{2}}
+          \end{align}
+          となり,式(\ref{eq:2.44})に代入すれば軌道として
+          \begin{align*}
+              \phi_2^2=\left[(1-2m^2)/d\right](1-\phi_1^2)
+          \end{align*}
+          の関係を得る.そしてこれを場の方程式(\ref{eq:2.37})に代入し,積分を実行すれば
+          \begin{align}
+               & \phi_1''=\phi_1^3-\phi_1+d\phi_2^2\phi_1=2m^2(\phi_1^3-\phi_1) \\
+               & \Rightarrow
+              \begin{cases}
+                  \phi_{1}(x)=\tanh \left[m\left(x-x_{0}\right)\right] \\
+                  \phi_{2}(x)=\pm\left[\left(1-2 m^{2}\right) / d\right]^{1 / 2} \operatorname{sech}\left[m\left(x-x_{0}\right)\right]
+              \end{cases}\label{eq:2.48}
+          \end{align}
+          としてSolitary waveの解を得ることができる.
+    \item[(ii)] $n=1$の場合\\
+          \begin{align}
+              m^{2}=2, \quad \lambda=\frac{8}{3} d, \quad \alpha^{2}=(d-3)/2
+          \end{align}
+          となり,先の議論と同様に式(\ref{eq:2.44})に代入すれば軌道として
+          \begin{align*}
+              \phi_{2}=[(d-3) / 2 d]^{1 / 2}\left(1-\phi_{1}^{2}\right)
+          \end{align*}
+          の関係を得て,場の方程式(\ref{eq:2.37})に代入すれば
+          \begin{align}
+              \phi_{2}^{''} & =m^{2} \phi_{2}+\lambda \phi_{2}^{3}+d \phi_{2}\left(\phi_{1}^{2}-1\right)\nonumber \\
+                            & =2 \phi_{2}-d[2 d /(d-3)]^{1 / 2} \phi_{2}^{2}+\frac{8}{3} d \phi_{2}^{3}
+          \end{align}
+          となり,定数$a,b,c$を用いて解きやすい形にして積分を実行すれば
+          \begin{align}
+              \phi_{2}^{''}=a \phi_{2}-\frac{3}{2} b \phi_{2}^{2}+2 c \phi_{2}^{3} \\
+              \Rightarrow
+              \begin{cases}
+                  \phi_{2}(x)=\frac{2 a}{\left(b^{2}-4 a c\right)^{1 / 2} \cosh (\sqrt{a} x)+b} \\
+                  \phi_{1}^{2}(x)=1-[2 d /(d-3)]^{1 / 2} \phi_{2}(x)
+              \end{cases}\label{eq:2.52}
+          \end{align}
+          を得る.
+\end{description}
+以上の手順で式(\ref{eq:2.48})及び式(\ref{eq:2.52})でSolitary wave解を得て,概形としてはどちらも同じで図\ref{2-coupled-phi_typeB}のようになる.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{figure/2-coupled-phi_typeB.png}
+    \caption{}
+    \label{2-coupled-phi_typeB}
+\end{figure}
+
+また,Type Aのような同じスタート地点に戻る閉曲線軌道のものに関しても
+\begin{align}
+    g\left(\phi_{1}, \phi_{2}\right)=\phi_{2}^{2}-\beta\left(\phi_{1}+1\right)\left(\alpha-\phi_{1}\right)=0
+\end{align}
+と置いて式(\ref{eq:2.41})から同様の手順を踏むことで
+\begin{align}
+     & \alpha                    =\frac{1+4 m^{2}}{3}, \quad \beta=\frac{2-4 m^{2}}{1+4 m^{2}}, \quad d=\frac{3+12 m^{2}}{4+4 m^{2}},\quad \lambda=\frac{\left(5-4 m^{2}\right)\left(1+4 m^{2}\right)}{\left(8+8 m^{2}\right)\left(1-2 m^{2}\right)}, \\
+     & \phi_{1}^{\prime \prime}= 4 m^{2}\left(1+\phi_{1}\right)-\left(\frac{8\left(1+m^{2}\right)^{2}-9}{2\left(1+m^{2}\right)}\right)\left(1+\phi_{1}^{2}\right)^{2}\nonumber                                                                        \\
+     & \qquad\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\left(\frac{8 m^{2}-1}{2\left(1 + m^{2}\right)}\right)\left(1+\phi_{1}\right)^{3}                                                                               \\
+     & \Rightarrow \phi_{1}(x)=\frac{2 a}{\left(b^{2}-4 a c\right)^{1 / 2} \cosh (\sqrt{a} x)+b}-1
+\end{align}
+のように各計算過程が定まり,その概形は図\ref{2-coupled-phi_typeA}のようになる.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{figure/2-coupled-phi_typeA.png}
+    \caption{}
+    \label{2-coupled-phi_typeA}
+\end{figure}
+以上で式(\ref{eq:2.48})のような複合場が作るポテンシャルにおいて,それそれの場の厳密解を求めることができた.以下にその手順をまとめておく.
+\begin{screen}
+    \begin{description}
+        \item[(i)] analogue粒子が描く軌道を設定し,その方程式をたてる.
+        \item[(ii)] 軌道とポテンシャルの間の関係を導き,(i)で定めた方程式を代入して出来上がる恒等式の係数比較をすることで各パラメータを決定する.
+        \item[(iii)] 軌道の方程式に(ii)で定まった各パラメータを代入し,積分方程式を解くことで厳密解を得る.
+    \end{description}
+\end{screen}
+
+\section{Topological indices}
+
+
+
 
 
 \end{document}
