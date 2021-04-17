@@ -165,7 +165,7 @@
 \begin{align}
     E[\phi]=\int_{-x}^{x} \mathrm{d} x\left[\frac{1}{2 c^{2}}\left(\frac{\partial \phi}{\partial t}\right)^{2}+\frac{1}{2}\left(\frac{\partial \phi}{\partial x}\right)^{2}+\frac{1}{4}\left(\phi^{2}-1\right)^{2}\right]
 \end{align}
-で与えられる.この$E[\phi]$は$\phi(x,t)=\pm 1$で最小値をとるから,localizeすると言いたければ,十分遠方$x\rightarrow \infty$で$\phi(x,t)\rightarrow \pm 1$となる必要がある.
+で与えられる.この$E[\phi]$は$\phi(x,t)=\pm 1$で最小値をとるから,localizeすると言いたければ,十分遠方$x\rightarrow \pm\infty$で$\phi(x,t)\rightarrow \pm 1$となる必要がある.
 
 \subsubsection{Solitary wave}
 localizeするとはどういうことかが普遍的に述べられた上でエネルギー密度の観点からSolitary waveとは何かを考える.Solitary waveは場の方程式においてlocalizeしているという特異性だけでなく次のような時空依存のエネルギー密度を描くものと定義できる.
@@ -181,9 +181,9 @@ localizeするとはどういうことかが普遍的に述べられた上でエ
 \end{itemize}
 上記の状況を式で表せば
 \begin{align}
-     & \varepsilon(x, t) \rightarrow \sum_{i=1}^{N} \varepsilon_{0}\left(x-a_{i}-u_{i} t\right), \quad \text { as } t \rightarrow-\infty\label{eq:2.9}             \\
-     & \varepsilon(x, t) \rightarrow \sum_{i=1}^{N} \varepsilon_{0}\left(x-a_{i}-u_{i} t+\delta_{i}\right), \quad \text { as } t \rightarrow+\infty\label{eq:2.10} \\
-     & \qquad \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\bm{\delta_i}:\text{定ベクトル})\nonumber
+     & \varepsilon(\bm{x}, t) \rightarrow \sum_{i=1}^{N} \varepsilon_{0}\left(\bm{x}-\bm{a}_{i}-\bm{u}_{i} t\right), \quad \text { as } t \rightarrow-\infty\label{eq:2.9}                  \\
+     & \varepsilon(\bm{x}, t) \rightarrow \sum_{i=1}^{N} \varepsilon_{0}\left(\bm{x}-\bm{a}_{i}-\bm{u}_{i} t+\bm{\delta}_{i}\right), \quad \text { as } t \rightarrow+\infty\label{eq:2.10} \\
+     & \qquad \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\bm{a}_i,\bm{\delta}_i:\text{定ベクトル})\nonumber
 \end{align}
 となる.これは$t\rightarrow -\infty$であるいくつかのSolitary waveのエネルギーパケットをもった解が一定速度かつ歪みなく進んだのち$t\rightarrow \infty$で時間発展したとしても形が変わらないという特徴(ii)の描像を描けているといえる.つまりこのエネルギー密度の関係式を満たすものがSolitonであると定義できる.\\
 
