@@ -581,5 +581,86 @@ Topological indicesに関連してTopological chargeという量がしばしば�
 を得る.まさにTopological charge $Q$は$(\sqrt{\lambda}/m)\phi(\infty)$と$(\sqrt{\lambda}/m)\phi(\infty)$の値の差であり,$Q=0$または$Q\neq 0$のどちらかを取る.先に上げた4つのtopological indicesのうち$Q\neq0$となるのは$(-m/\sqrt{\lambda},m/\sqrt{\lambda}),(m/\sqrt{\lambda},-m/\sqrt{\lambda})$の2つのkink及びanti-kinkでtopologicalな解と呼ぶ.実際,このtopological chargeが一種の境界条件となっており,$Q\neq0$でtopologicalであれば非自明な静的Solitary wave解を得ることができるということを意味する.これは次元が増えようとも,空間変換,ゲージ変換をしようとも具体的な解の計算前にいつでもモデルのtopologyを調べることができるとても強力なツールとなる.
 
 \section{Soliton of the sine-Gordon system}
+章の最後にSoliton解として有名なsine-Gordonの解を見ていく.このラグランジアン密度は
+\begin{align}
+    \mathscr{L}(x, t)=\frac{1}{2}\left(\partial_{\mu} \phi\right)\left(\partial^{\mu} \phi\right)+\left(m^{4} / \lambda\right)\{\cos [(\sqrt{\lambda} / m) \phi]-1\}\label{eq:2.61}
+\end{align}
+で与えられる.またこのラグランジアンは相転移の伝播,Josephson line中での磁束の伝播や荷電粒子の2次元モデルなど様々な模型に使われている.また式(\ref{eq:2.61})を$\lambda$についてべき展開した
+\begin{align}
+    \mathscr{L}(x, t)=\frac{1}{2}\left(\partial_{\mu} \phi\right)\left(\partial^{\mu} \phi\right)-\frac{1}{2} m^{2} \phi^{2}+\frac{\lambda}{4 !} \phi^{4}-\frac{\lambda^{2} \phi^{6}}{m^{2} 6 !}+\ldots
+\end{align}
+もKlein-Gordonの系を作るとして非常に有名である.
+
+そして,話を式(\ref{eq:2.61})に戻せば,このラグランジアンが作る方程式は
+\begin{align*}
+    \square \phi+\left(m^{3} / \sqrt{\lambda}\right) \sin [(\sqrt{\lambda} / m) \phi]=0 .
+\end{align*}
+となる.式を簡単にするために
+\begin{align}
+    \bar{x}=m x, \quad \bar{t}=m t \quad \text { and } \quad \bar{\phi}=(\sqrt{\lambda} / m) \phi .
+\end{align}
+と変数変換すればラグランジアン密度及び運動方程式は
+\begin{align}
+    \bar{\mathscr{L}}(\bar{x}, \bar{t})=\left(m^{4} / \lambda\right)\left[\frac{1}{2}\left(\bar{\partial}_{\mu} \bar{\phi}\right)\left(\bar{\partial}^{\mu} \bar{\phi}\right)+(\cos \bar{\phi}-1)\right]\label{eq:2.64} \\
+    \frac{\partial^{2} \bar{\phi}}{\partial \bar{t}^{2}}-\frac{\partial^{2} \bar{\phi}}{\partial \bar{x}^{2}}+\sin \bar{\phi}(\bar{x}, \bar{t})=0\label{eq:2.65}
+\end{align}
+となる.そしてエネルギー積分は
+\begin{align}
+    E=\frac{m^{3}}{\lambda} \int \mathrm{d} \bar{x}\left[\frac{1}{2}\left(\frac{\partial \bar{\phi}}{\partial \bar{t}}\right)^{2}+\frac{1}{2}\left(\frac{\partial \bar{\phi}}{\partial \bar{x}}\right)^{2}+(1-\cos \bar{\phi})\right]\label{eq:2.66}
+\end{align}
+となる.また,このラグランジアンと場の方程式は対称性があることがわかっており
+\begin{align}
+     & \bar{\phi}(\bar{x}, \bar{t}) \rightarrow-\bar{\phi}(\bar{x}, \bar{t})                                             \\
+     & \bar{\phi}(\bar{x}, \bar{t}) \rightarrow \bar{\phi}(\bar{x}, \bar{t})+2 N \pi ; \quad N=\ldots-2,-1,0,1,2, \ldots
+\end{align}
+の関係性をもっている.この対称性を用いてればエネルギー$E$は最小値である
+\begin{align}
+    U(\bar{\phi})=1-\cos \bar{\phi}\quad \text{which are} \quad \bar{\phi}(\bar{x}, \bar{t})=2 N \pi
+\end{align}
+で消える.つまりこのラグランジアンのTopologicalセクターは$\left(\phi(x=-\infty),\phi(x=+\infty)\right)=(N_1,N_2)=(-2N_1\pi, 2N_2\pi)$であることが前セクションでの議論によってわかる.そしてTopological chargeを計算することによって静的なのか,時間依存なのかを知ることができる.いま仮に$\bar{\phi}$のモジュールである$2\pi$が物理的に意味があるとすればTopological chargeは
+\begin{align}
+    Q \equiv N_{1}-N_{2}=\frac{1}{2 \pi} \int_{-\infty}^{\infty} \mathrm{d} \bar{x} \frac{\partial \bar{\phi}}{\partial \bar{x}}
+\end{align}
+で定義される.
+
+\subsection{Static localised solution}
+まず静的で局在化する解について考える.この場合,$Q=\pm 1$である必要があり,式(\ref{eq:2.23})で導いた関係を用いれば
+\begin{align}
+    \bar{x}-\bar{x}_{0}=\pm \int_{\bar{\phi}\left(\bar{x}_{0}\right)}^{\bar{\phi}(\bar{x})} \frac{\mathrm{d} \phi}{\sqrt{2 U(\phi)}}=\pm \int_{\bar{\phi}(\bar{x}_{0})}^{\phi(\bar{x})} \frac{\mathrm{d} \phi}{2 \sin (\phi / 2)}
+\end{align}
+\begin{subequations}
+    \begin{align}
+        \Rightarrow \bar{\phi}(x)=4 \tan ^{-1}\left[\exp \left(\bar{x}-\bar{x}_{0}\right)\right] \equiv \phi_{\mathrm{sol}}\left(\bar{x}-\bar{x}_{0}\right)\label{eq:2.72a} \\
+        \Rightarrow \bar{\phi}(x)=-4 \tan ^{-1}\left[\exp \left(\bar{x}-\bar{x}_{0}\right)\right] \equiv \bar{\phi}_{\text {antisol }}\left(\bar{x}-\bar{x}_{0}\right)=-\bar{\phi}_{\text {sol}}\label{eq:2.72b}
+    \end{align}
+\end{subequations}
+の2つの解を得ることができる.ここで,式(\ref{eq:2.72a})は図\ref{eq2-72_fig}のように$\bar{\phi}=0$から$\bar{\phi}=2\pi$または$2\pi$から$4\pi$,$4\pi$から$6\pi$というように変化し,$Q=1$となる.そしてこれはSolitonと呼ばれる.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{figure/eq2-72.png}
+    \caption{}
+    \label{eq2-72_fig}
+\end{figure}
+一方で式(\ref{eq:2.72b})は$Q=-1$でAnti-solitonと呼ばれている.また,どちらの解も式(\ref{eq:2.66})に代入することでエネルギー$M_\mathrm{s}=8m^3/\lambda$を持つこともわかる.さらにもし仮にこのSoliton解を動かしたければ以前行ったのと同様にローレンツ変換を行い,$(\bar{x}-\bar{x}_0)$を$\left[\left(\bar{x}-\bar{x}_{0}-u \bar{t}\right) / \sqrt{1-u^{2}}\right]$とように変換すれば良い.
+
+\subsection{Behavior of Soliton solution}
+式(\ref{eq:2.72a})及び式(\ref{eq:2.72b})のSoliton解は一見するとkink解と同様に思える.しかしながら,しっかりと式(\ref{eq:2.9})(\ref{eq:2.10})のSolitonとしての強い要請を満たしているのである.そこでいくつかのSolitonを衝突させた場合の振る舞いを見ていく.そこでSoliton解とAnti-Soliton解を重ね合わせた,同じく式(\ref{eq:2.65})の方程式を満たす以下のような解を考える.
+\begin{align}
+    \bar{\phi}_{\mathrm{SA}}(\bar{x}, t)=4 \tan ^{-1}\left(\frac{\sinh \left(u \bar{t} / \sqrt{1-u^{2}}\right)}{u \cosh \left(\bar{x} / \sqrt{1-u^{2}}\right)}\right)
+\end{align}
+これがSoliton解とAnti-solitonを重ね合わせて形を保つということは以下のように容易に示せる.
+\begin{align}
+    \bar{\phi}_{\mathrm{SA}}(\bar{x}, \bar{t}) \underset{\bar{t} \rightarrow-\infty}{\longrightarrow} 4 \tan ^{-1}\left[\exp \left(\frac{\bar{x}+u(\bar{t}+\Delta / 2)}{\sqrt{1-u^{2}}}\right)\right]\nonumber                                                                                  \\
+    -4 \tan ^{-1}\left[\exp \left(\frac{\bar{x}-u(\bar{t}+\Delta / 2)}{\sqrt{1-u^{2}}}\right)\right]\nonumber                                                                                                                                                                                   \\
+    =\bar{\phi}_{\mathrm{sol}}\left(\frac{\bar{x}+u(\bar{t}+\Delta / 2)}{\sqrt{1-u^{2}}}\right)+\bar{\phi}_{\text {antisol }}\left(\frac{\bar{x}-u(\bar{t}+\Delta / 2)}{\sqrt{1-u^{2}}}\right)                                                                                                  \\
+    \bar{\phi}_{\mathrm{SA}}(\bar{x}, \bar{t}) \underset{\bar{t} \rightarrow-\infty}{\longrightarrow} \bar{\phi}_{\mathrm{sol}}\left(\frac{\bar{x}+u(\bar{t}-\Delta / 2)}{\sqrt{1-u^{2}}}\right)+\bar{\phi}_{\text {antisol }}\left(\frac{\bar{x}-u(\bar{t}-\Delta / 2)}{\sqrt{1-u^{2}}}\right) \\
+    \Delta \equiv\left(\left(1-u^{2}\right) / u\right) \ln u
+\end{align}
+なお,描像については別ファイルのgifを参照.
+
+
+
+
+
 
 \end{document}
