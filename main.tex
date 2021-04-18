@@ -58,7 +58,7 @@
               \end{align*}
               で書かれる.(Mostly minus)
         \item 同じ添字がついてるものについては足し上げる.(縮約記法)
-        \item $\partial_{\mu}$は時間や空間での微分$\frac{\partial}{\partial_{\mu}}$を表す.
+        \item $\partial_{\mu}$は時間や空間での微分$\frac{\partial}{\partial x_{\mu}}$を表す.
         \item 簡単のために本セクションに限っては1つの時間座標と1つの空間座標の(1+1)次元,つまり$\mu=0,1$とする.
     \end{itemize}
 \end{screen}
@@ -115,7 +115,7 @@
 \begin{align*}
     f(x-ct)=\int \mathrm{d} k\left[a_{1}(k) \cos (k x-\omega t)+a_{2}(k) \sin (k x-\omega t)\right]
 \end{align*}
-を作ったときに今回の場合,波の進行速度が$\omega(k)/k$というように波数$k$に依存することになる.したがって一度作った波のパケットが時間とともに違った速度で形を広げながら伝搬してしまい,先に述べた(i)(ii)の特徴を持ち合わせていないということがわかる.(別ファイルに添付したGifを参照.)
+を作ったときに今回の場合,波の進行速度が$\omega(k)/k$というように波数$k$に依存することになる.したがって一度作った波のパケットが違った速度で形を広げながら伝搬してしまい,先に述べた(i)(ii)の特徴を持ち合わせていないということがわかる.(別ファイルに添付したGifを参照.)
 \begin{figure}[H]
     \centering
     \subfigure[]{%
@@ -145,7 +145,7 @@
     \item 空間内の全エネルギー$E[\phi_i]$は保存し,一般性を失わない.
     \item エネルギー$E$の最小値は0.
     \item 空間内でエネルギーは有限の値をとるが無限遠では$E=0$.
-    \item 任意の時刻$t$において十分遠方($x\rightarrow \infty$)で最小値$E[\phi_i]$に漸近するような場の方程式の解に対して局在化した(localized)という言葉をつかう.
+    \item 任意の時刻$t$において十分遠方($x\rightarrow \infty$)で$\varepsilon$が最小値に漸近するような場の方程式の解に対して局在化した(localized)という言葉をつかう.
 \end{itemize}
 ではこれらをいくつかの例を紹介しながらlocalizeするとはどういうことか見ていく.先に紹介した式(\ref{eq:2.4})の方程式
 \begin{align*}
@@ -185,7 +185,7 @@ localizeするとはどういうことかが普遍的に述べられた上でエ
      & \varepsilon(\bm{x}, t) \rightarrow \sum_{i=1}^{N} \varepsilon_{0}\left(\bm{x}-\bm{a}_{i}-\bm{u}_{i} t+\bm{\delta}_{i}\right), \quad \text { as } t \rightarrow+\infty\label{eq:2.10} \\
      & \qquad \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\bm{a}_i,\bm{\delta}_i:\text{定ベクトル})\nonumber
 \end{align}
-となる.これは$t\rightarrow -\infty$であるいくつかのSolitary waveのエネルギーパケットをもった解が一定速度かつ歪みなく進んだのち$t\rightarrow \infty$で時間発展したとしても形が変わらないという特徴(ii)の描像を描けているといえる.つまりこのエネルギー密度の関係式を満たすものがSolitonであると定義できる.\\
+となる.これは$t\rightarrow -\infty$であるいくつかのSolitary waveのエネルギーパケットをもった解が一定速度かつ歪みなく進んだのち$t\rightarrow \infty$で時間発展したとしても形が変わらないという特徴(ii)の描像を描けているといえる.つまりこのエネルギー密度の関係式(\ref{eq:2.9})(\ref{eq:2.10})を満たすものがSolitonであると定義できる.\\
 
 以上でSolitonとSolitary waveの区別ができるようになった.そしてこの世界には静的解を含めてSolitary waveは割と存在する.しかしながらSolitonは式(\ref{eq:2.10})の要請の縛りが強くほとんど存在しないというのが現状である.そもそも非線形場の方程式に対してSolitary waveの要請式(\ref{eq:2.8})を確認するのも割と大変な作業となる.そして式(\ref{eq:2.9})(\ref{eq:2.10})の両方を満たしているかを確認するのはさらに労力が必要となる.(この本ではやりたきゃ一人で時間をかけてやってどうぞと記載してある.)また,物理でSolitonと使われるとき大体はSolitary waveも含めてそう呼ぶ慣習があり,重要なことはその違いを理解していることである.研究等なんらかの場合に厳密にSolitonであることを示す必要がある場合には式(\ref{eq:2.8})(\ref{eq:2.9})(\ref{eq:2.10})の要請を確かめられれば良い.一応逆散乱法やバックグラウンド変換などといったエレガントな方法も存在するということも紹介しておく.
 
@@ -197,7 +197,7 @@ localizeするとはどういうことかが普遍的に述べられた上でエ
 \begin{align}
     \mathscr{L}(x, t)=\frac{1}{2}(\dot{\phi})^{2}-\frac{1}{2}\left(\phi^{'}\right)^{2}-U(\phi)
 \end{align}
-を考える.\footnote{プライム記号("$'$")は時間微分を表しドット記号("$\dot{ }$")は空間微分を表す.}なおここでは光速$c=1$とし,ポテンシャル$U(\phi)$は$\phi$の関数で最小値が0のものとする.作用の変分をとれば
+を考える.\footnote{プライム記号($'$)は時間微分を表しドット記号($\dot{ }$)は空間微分を表す.}なおここでは光速$c=1$とし,ポテンシャル$U(\phi)$は$\phi$の関数で最小値が0のものとする.作用の変分をとれば
 \begin{align}
     \delta\left(\int dt \int_{-x}^{x}dx\mathscr{L}(x,t)\right)=0
 \end{align}
@@ -225,7 +225,7 @@ localizeするとはどういうことかが普遍的に述べられた上でエ
 \end{align}
 となる.
 
-さらにSolitary waveは有限のエネルギーでlocalizeしたエネルギー密度をもっているという要請をこれに課す.前セクションで述べたが,localizeするには任意の時刻$t$において十分遠方($x\rightarrow \pm\infty$)で最小値$E[\phi_i]$に漸近する必要があった.(($\partial\phi/\partial x\rightarrow 0$も.))いま式(\ref{eq:2.15})で最小値をとることがわかっているから,localizeするという要請から以下の境界条件が成立する.
+さらにSolitary waveは有限のエネルギーでlocalizeしたエネルギー密度をもっているという要請をこれに課す.前セクションで述べたが,localizeするには任意の時刻$t$において十分遠方($x\rightarrow \pm\infty$)で最小値$E[\phi_i]$に漸近する必要があった.(($\partial\phi/\partial x)\rightarrow 0$も.)いま式(\ref{eq:2.15})で最小値をとることがわかっているから,localizeするという要請から以下の境界条件が成立する.
 \begin{screen}
     \begin{align*}
         U(\phi)\rightarrow0 \quad \text{and} \quad \left(\frac{\partial\phi}{\partial x}\right)\rightarrow 0,\qquad \text{as}\quad x\rightarrow \pm \infty
