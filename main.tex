@@ -209,7 +209,7 @@ localizeするとはどういうことかが普遍的に述べられた上でエ
 \begin{align}
     E[\phi]=\int_{-\infty}^{\infty} \mathrm{d} x\left[\frac{1}{2}(\dot{\phi})^{2}+\frac{1}{2}\left(\phi^{'}\right)^{2}+U(\phi)\right]\label{eq:2.14}
 \end{align}
-となる.そして$U(\phi)$が$M(\geq1)$個の点で最小値0をとする.
+となる.(求め方はAppendixにまとめた.)そして$U(\phi)$が$M(\geq1)$個の点で最小値0をとする.
 \begin{align}
     U(\phi)=0 \quad \text { for } \quad \phi=g^{(i)} ; \quad i=1, \ldots, M\label{eq:2.15}
 \end{align}
@@ -658,7 +658,33 @@ Topological indicesに関連してTopological chargeという量がしばしば�
 \end{align}
 なお,描像については別ファイルのgifを参照.
 
-
+\appendix
+\chapter{How to define energy density}
+エネルギー運動量テンソルは
+\begin{align*}
+    T^{\mu \nu}=\frac{\partial \mathcal{L}}{\partial\left(\partial_{\mu} \phi\right)} \partial^{\nu} \phi-\eta^{\mu \nu} \mathcal{L}
+\end{align*}
+で定義され,エネルギー密度$\epsilon$を知りたければ$T^{00}$を計算すればよい.ラグランジアン密度が
+\begin{align*}
+    \mathcal{L}(t,x)=\frac{1}{2}\left(\partial_{t} \phi\right)^{2}-\frac{1}{2}\left(\partial_{x} \phi\right)^{2}-U
+\end{align*}
+で記述されるとすれば
+\begin{align*}
+    T^{00}= & \frac{\partial \mathcal{L}}{\partial\left(\partial_{0} \phi\right)} \partial^{0} \phi-\eta^{00} \mathcal{L}                                                                                        \\
+    =       & \left(\partial_{t} \phi\right) \frac{\partial}{\partial\left(\partial_{t} \phi\right)}\left\{\frac{1}{2}\left(\partial_{t} \phi\right)^{2}-\frac{1}{2}\left(\partial_{x} \phi\right)^{2}-U\right\} \\
+            & -\left\{\frac{1}{2}\left(\partial_{t} \phi\right)^{2}-\frac{1}{2}\left(\partial_{x} \phi\right)^{2}-U\right\}                                                                                      \\
+    =       & \left(\partial_{t} \phi\right)^{2}-\frac{1}{2}\left(\partial_{t} \phi\right)^{2}+\frac{1}{2}\left(\partial_{x} \phi\right)^{2}+U                                                                   \\
+    =       & \frac{1}{2}\left(\partial_{t} \phi\right)^{2}+\frac{1}{2}\left(\partial_{x} \phi\right)^{2}+U
+\end{align*}
+となり,エネルギー密度は
+\begin{align*}
+    \mathcal{E}(t, x)=\frac{1}{2}\left(\partial_{t} \phi\right)^{2}+\frac{1}{2}\left(\partial_{x} \phi\right)^{2}+U
+\end{align*}
+として定めることができる.そして系全体のエネルギーはこれを全空間で積分すればよく,
+\begin{align*}
+    E[\phi]=\int_{-\infty}^{+\infty} \mathrm{d} x \mathcal{E}(t, x)
+\end{align*}
+で与えられる.
 
 
 
