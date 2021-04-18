@@ -566,7 +566,7 @@ Topological indicesに関連してTopological chargeという量がしばしば�
 \begin{align}
     Q=\frac{\sqrt{\lambda}}{m}[\phi(x=\infty)-\phi(x=-\infty)]
 \end{align}
-また,これに対する保存カレントとして
+また,次の量
 \begin{align}
     k^{\mu}=\frac{\sqrt{\lambda}}{m} \varepsilon^{\mu \nu} \partial_{\nu} \phi;\quad \mu,\nu=0,1;\quad g_{\mu \nu}=
     \begin{pmatrix}
@@ -574,11 +574,30 @@ Topological indicesに関連してTopological chargeという量がしばしば�
         0 & -1
     \end{pmatrix}
 \end{align}
-が挙がる.($\varepsilon^{\mu\nu}$は反対称テンソル.)これらを用いればきれいな形で
+を定義すれば($\varepsilon^{\mu\nu}$は反対称テンソル.),
+\begin{align*}
+    \partial_{\mu} k^{\mu} & =\frac{\sqrt{\lambda}}{m} \varepsilon^{\mu \nu} \partial_{\mu} \partial_{\nu} \phi                                                    \\
+                           & =\frac{\sqrt{\lambda}}{m}\left(\varepsilon^{01} \partial_{0} \partial_{1} \phi+\varepsilon^{10} \partial_{1} \partial_{0} \phi\right) \\
+                           & =\frac{\sqrt{\lambda}}{m}\left(\partial_{t} \partial_{x} \phi-\partial_{x} \partial_{t} \phi\right)                                   \\
+                           & =0
+\end{align*}
+というように発散がゼロとなる.つまり保存量$k^{\mu}$が定義できることになり,これをTopological currentと呼ぶ.このカレントの時間成分$k^{0}$は
+\begin{align*}
+    k^{0} & =\frac{\sqrt{\lambda}}{m} \varepsilon^{0 \nu} \partial_{\nu} \phi \\
+          & =\frac{\sqrt{\lambda}}{m} \varepsilon^{01} \partial_{1} \phi      \\
+          & =\frac{\sqrt{\lambda}}{m} \partial_{x} \phi
+\end{align*}
+となり,全空間で積分すれば
+\begin{align*}
+    \int_{-\infty}^{+\infty} \mathrm{d} x k^{0} & =\frac{\sqrt{\lambda}}{m} \int_{-\infty}^{+\infty} \mathrm{d} x \partial_{x} \phi \\
+                                                & =\frac{\sqrt{\lambda}}{m}[\phi]_{-\infty}^{+\infty}                               \\
+                                                & =\frac{\sqrt{\lambda}}{m}[\phi(x=\infty)-\phi(x=-\infty)]
+\end{align*}
+となる.これよりTopological currentを用いれば
 \begin{align}
     \partial_{\mu} k^{\mu}=0 \quad \text { and } \quad Q=\int_{-\infty}^{\infty} \mathrm{d} x k_{0}
 \end{align}
-を得る.まさにTopological charge $Q$は$(\sqrt{\lambda}/m)\phi(\infty)$と$(\sqrt{\lambda}/m)\phi(\infty)$の値の差であり,$Q=0$または$Q\neq 0$のどちらかを取る.先に上げた4つのtopological indicesのうち$Q\neq0$となるのは$(-m/\sqrt{\lambda},m/\sqrt{\lambda}),(m/\sqrt{\lambda},-m/\sqrt{\lambda})$の2つのkink及びanti-kinkでtopologicalな解と呼ぶ.実際,このtopological chargeが一種の境界条件となっており,$Q\neq0$でtopologicalであれば非自明な静的Solitary wave解を得ることができるということを意味する.これは次元が増えようとも,空間変換,ゲージ変換をしようとも具体的な解の計算前にいつでもモデルのtopologyを調べることができるとても強力なツールとなる.
+の関係を得る.まさにTopological charge $Q$は$(\sqrt{\lambda}/m)\phi(\infty)$と$(\sqrt{\lambda}/m)\phi(\infty)$の値の差であり,$Q=0$または$Q\neq 0$のどちらかを取る.先に上げた4つのtopological indicesのうち$Q\neq0$となるのは$(-m/\sqrt{\lambda},m/\sqrt{\lambda}),(m/\sqrt{\lambda},-m/\sqrt{\lambda})$の2つのkink及びanti-kinkでtopologicalな解と呼ぶ.実際,このtopological chargeが一種の境界条件となっており,$Q\neq0$でtopologicalであれば非自明な静的Solitary wave解を得ることができるということを意味する.これは次元が増えようとも,空間変換,ゲージ変換をしようとも具体的な解の計算前にいつでもモデルのtopologyを調べることができるとても強力なツールとなる.
 
 \section{Soliton of the sine-Gordon system}
 章の最後にSoliton解として有名なsine-Gordonの解を見ていく.このラグランジアン密度は
