@@ -707,6 +707,18 @@ Topological indicesに関連してTopological chargeという量がしばしば�
 \end{align*}
 で与えられる.
 
+\chapter{How to solve $\int \operatorname{sech}^{4} x d x$}
+$\int \operatorname{sech}^{4} x d x$を解くには以下のように$\operatorname{sech}^4$を分解する.
+\begin{align*}
+    \int \operatorname{sech}^{4} x d x=\int \operatorname{sech}^{2} x \cdot\left(1-\tanh ^{2} x\right) d x
+\end{align*}
+ここで$u=\tanh x,\quad (\mathrm{d}u=\operatorname{sech}^2x)$とおけば
+\begin{align*}
+    \int \operatorname{sech}^{4} x d x & =\int\left(1-u^{2}\right) d u       \\
+                                       & =u-\frac{u^{3}}{3}+C                \\
+                                       & =\tanh x-\frac{1}{3} \tanh ^{3} x+C
+\end{align*}
+として積分を実行できる.
 
 
 
