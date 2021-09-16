@@ -3,7 +3,14 @@
 %\usepackage{a4wide}
 \usepackage[dvipdfmx]{hyperref}
 \usepackage{pxjahyper}
+\usepackage{tikz}
+\usetikzlibrary{intersections, calc, arrows.meta}
 
+
+%\addtolength{\fullwidth}{1truemm} %全体の幅(ヘッダ部の幅)を既定値から26mm小さくする
+\setlength{\textwidth}{\fullwidth}  %本文の幅(textwidth)を全体の幅(=ヘッダ部の幅)にそろえる
+\setlength{\evensidemargin}{5truemm}   %偶数ページの左余白を10mm(+1インチ)にする
+\setlength{\oddsidemargin}{5truemm}    %奇数ページの左余白を10mm(+1インチ)にする
 
 %\title{}
 %\author{}
@@ -19,10 +26,42 @@
 %\makeatother
 \newcommand{\ctext}[1]{\raise0.2ex\hbox{\textcircled{\scriptsize{#1}}}}
 
-\addtolength{\fullwidth}{-26truemm} %全体の幅(ヘッダ部の幅)を既定値から26mm小さくする
-\setlength{\textwidth}{\fullwidth}  %本文の幅(textwidth)を全体の幅(=ヘッダ部の幅)にそろえる
-\setlength{\evensidemargin}{10truemm}   %偶数ページの左余白を10mm(+1インチ)にする
-\setlength{\oddsidemargin}{10truemm}    %奇数ページの左余白を10mm(+1インチ)にする
+\setcounter{chapter}{4}
 \chapter{QUANTISATION OF STATIC SOLUTION}
+\section{Introduction}
+これまでの議論では波動方程式から始まり, ミンコフスキー空間やユークリッド空間において, 様々なLocalizeされた古典解を調べ, 場の古典論との対応関係を調べてきた. 本チャプターではこれまで見てきた古典解に対して, 新たに場の量子論との関係を議論していく. %実際, 古典的なミンコフスキー解を量子論の束縛状態や散乱理論に関連付けることができたり, 励起状態を記述できたりする.
+
+最もシンプルな方法として2章でメインに扱ったような静的ソリトン解の量子化から始めていくが,
+
+
+\begin{tikzpicture}
+    \draw (2.9,5.7)--(2.9,6.3)--(4.8,6.3)--(4.8,5.7)--(2.9,5.7);
+    \draw (2.9,6) node[right]{場の古典論};
+    \draw (10.5,5.7)--(10.5,6.3)--(12.4,6.3)--(12.4,5.7)--(10.5,5.7);
+    \draw (10.5,6) node[right]{場の量子論};
+    \draw (0,0)--(15.2,0);
+    \draw (0,0)--(0,6)--(2.9,6);
+    \draw (4.8,6)--(10.5,6);
+    \draw (12.4,6)--(15.2,6);
+    \draw (15.2,0)--(15.2,6);
+    \draw[dashed] (7.52,0)--(7.52,6);
+    \draw (0.1,5) node[right]{1. 場が\underline{\bf c-numberの関数で記述}される.};
+    \draw (7.6,5) node[right]{1. 場が\underline{\bf q-number(演算子)の関数で記述}される.};
+    \draw (0.1,4.2) node[right]{2. 古典系において複数の\underline{\bf 場の状態の区別が可能}.};
+    \draw (7.6,4.2) node[right]{2. 量子系において複数の\underline{\bf 場の状態の区別が不可能}.};
+    \draw (7.9,3.8) node[right]{\footnotesize{$\rightarrow$ ヒルベルト空間においてSchr\"{o}dinger方程式に従う状態}};
+    \draw (8.3,3.5) node[right]{\footnotesize{ベクトルを用いて区別.}};
+    \draw (0.1,2.7) node[right]{3. 場のダイナミクスは\underline{\bf 非線形偏微分方程式}で記述};
+    \draw (0.5,2.3) node[right]{され, \underline{\bf 解はスカラー関数}として現れる.};
+    \draw (7.6,2.7) node[right]{3. 場のダイナミクスは\underline{\bf Heisenberg方程式で記述}};
+    \draw (8,2.3) node[right]{され, \underline{\bf 解は演算子の関数}として現れる.};
+    \draw (0.1,1.5) node[right]{4. 実際の粒子(particle)の概念を適用しない.};
+    \draw (0.4,1.1) node[right]{\footnotesize{$\rightarrow$ 粒子"描像"を適用.}};
+    \draw (7.6,1.5) node[right]{4. 実際の粒子(particle)の概念が適用できる.};
+    \draw (7.9,1.1) node[right]{\footnotesize{$\rightarrow$ 同時固有状態にハミルトニアンと運動量演算子を作用させ}};
+    \draw (8.2,0.8) node[right]{\footnotesize{た時, $E^2-\bm{P}^2=M^2$の関係から一定値$M$を生じる.}};
+\end{tikzpicture}
+
+%これらの手法の選択は、調和振動子の問題にシュレディンガー微分方程式、ファインマン経路積分、ハイゼンベルグ整流器法のどれを使うかというように、好みの問題もあります。
 
 \end{document}
