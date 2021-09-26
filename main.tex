@@ -37,7 +37,7 @@
 \section{Introduction}
 これまでの議論では波動方程式から始まり, ミンコフスキー空間やユークリッド空間において, 様々なLocalizeされた古典解を調べ, 場の古典論との対応関係を調べてきた. 本チャプターではこれまで見てきた古典解に対して, 新たに場の量子論との関係を議論していく. %実際, 古典的なミンコフスキー解を量子論の束縛状態や散乱理論に関連付けることができたり, 励起状態を記述できたりする.
 
-最もシンプルな方法として2章でメインに扱ったような静的ソリトン解の量子化から始めていくが, それにあたっては場の古典論と場の量子論の違いを把握した上で, その対応関係を通して議論が展開されていく. そのためにそれぞれの性質と対応関係について下記にまとめておく.
+最もシンプルな方法として2章でメインに扱ったような静的ソリトン解の量子化から始めていくが, それにあたっては場の古典論と場の量子論の違いを把握した上で, その対応関係を通して議論が展開されていく. そのためにそれぞれの性質と対応関係について下記に簡単にまとめておく.
 
 \vspace{1cm}
 \begin{tikzpicture}
@@ -74,7 +74,7 @@
 一次元のポテンシャル$V(x)$に従う単位質量の粒子を考え, 古典論と量子論の比較をしながら, 量子化の手順を説明していく.
 
 \subsection{How to describe the particle in classical theory and quantum theory}
-古典論においてこの粒子を記述する際には運動方程式を用いて
+古典論において粒子を記述する際には運動方程式を用いて
 \begin{align}
     \frac{\mathrm{d^2}x}{\mathrm{d^2}t}=-\frac{\mathrm{d}V}{\mathrm{d}x}
 \end{align}
@@ -83,6 +83,7 @@
     H\psi_n(x)=\left(\frac{1}{2}\hat{p}^2+V(x)\right)\psi_n(x)=E_n\psi_n(x), \qquad \left(\hat{p}\equiv -i\hbar\frac{\partial}{\partial x}\right)
 \end{align}
 というようなSchr\"{o}dinger方程式に従って記述される. ではこの2つの記述それぞれについて調べたときにわかることを古典論と量子論で対応させながら見ていく.
+
 
 \subsection{Comparison of classical theory and quantum theory}
 図\ref{fig1}のような$x=a, b, c$に極値をもつポテンシャル$V(x)$を考えたとき, 粒子の運動はポテンシャルに沿って行われる事実から考えると, この静的解は
@@ -114,7 +115,7 @@
 \begin{align}
     V(x)=V(a)+\frac{1}{2}\omega^2(x-a)^2+\frac{1}{3!}\lambda_3(x-a)^3+\frac{1}{4!}\lambda_4(x-a)^4+\cdots
 \end{align}
-というように調和振動+ゆらぎという形で展開ができる. つまり, $x=a$まわりの振動を記述するのは第1項と第2項であり, それ以降は振動とは関係のないゆらぎの項である. したがって, 各項の波動関数には
+というように調和振動+ゆらぎという形で展開ができる. そして, $x=a$まわりの振動を記述するのは第1項と第2項であり, それ以降は振動とは関係のない量子的なゆらぎの項である. したがって, 各項の波動関数には
 \begin{align}
     \lambda_r\braket{(x-a)^r} \ll \omega^2\braket{(x-a)^2}, \qquad r=3,4,\cdots
 \end{align}
@@ -146,19 +147,17 @@
 \begin{align}
      & \braket{x}=c+\mathcal{O}(\lambda'_r)
 \end{align}
-というように表現することができる. しかしながらここで注視すべきことは, いま見ている状況設定では粒子にとって$x=c$付近での調和振動のみを考えており, 他のポテンシャル井戸の寄与はないとしていることである. 量子論においてはトンネル効果が成立することから$x=a$と$x=c$の互いのポテンシャル井戸を移動するということが起こり, 描像において2つの極値が混在することも考えうる. そこで, $\lambda_r$と$\lambda'_r$の値が共に小さければ~の理由により, $x=a$と$x=c$は大きく離れ, ポテンシャル壁が存在することになる. このことにより, トンネリングを無視することができ, $x=a$と$x=c$における描像をそれぞれ別に考えることができる.
+というように表現することができる. しかしながらここで注視すべきことは, いま見ている状況設定では粒子にとって$x=c$付近での調和振動のみを考えており, 他のポテンシャル井戸の寄与はないとしていることである. 量子論においてはトンネル効果が成立することから$x=a$と$x=c$の互いのポテンシャル井戸を移動するということが起こり, 描像において2つの極値を行き来して混在することも考えうる. そこで, $\lambda_r$と$\lambda'_r$の値が共に小さければ互いのポテンシャルが一致することはなくなり, $x=a$と$x=c$は大きく離れ, ポテンシャル壁が存在することになる. このことにより, トンネリングを無視することができ, $x=a$と$x=c$における描像をそれぞれ別に考えることができるとして議論を進めていく.
 %基底状態に関するすべての情報は、その波動関数に含まれています。しかし、古典解は、同じ近似において、基底状態の波動関数の他の特徴も与える。この基本的な理由は、この波動関数phi0がxに広がりを持っていても、古典解x=aの周りに典型的に局在するということです。例えば、その位置期待値は次のように与えられる。a+bここで、ドットは非調和定数lmabdaによる補正を表しています。ここで、(5.10)のaは単なる数字ですが、(5.3a)の静的な古典解を表しており、一方、左辺は量子基底状態の特性を表しています
 %しかし、lambda_rとlambda'_rがすべて小さければ、2つの極小点x=aとx=cは大きく離れ、その間には大きな電位障壁が存在します。そのため、トンネリングは遅くなり、結果的にトンネリングによるエネルギー固有値の変化は、パラメータlambda_rとlambda'_rにおいて非摂動的な現象となる。弱結合展開の任意の有限オーダーにおいて、x=c付近の準位のセット(5.13)は、x=a付近のセット(5.8)とは別に考えることができる。
-\begin{align}
-    E_{n}=V+\frac{1}{2}\left(p_{n}\right)^{2}
-\end{align}
 
 
-では, $N$個の粒子の$N$次元系での議論に拡張する. このときこれまでと同様にweak-coupling expansionを行えば, そのポテンシャル$V(x_1,x_2,\cdots,x_N)$は$x=a_i$周りにおいて
+では, $N$個の粒子の$N$次元系での議論に拡張する. このときこれまでと同様にweak-coupling expansionを行えば, そのポテンシャル$V(x_1,x_2,\cdots,x_N)$は$x_i=a_i$周りにおいて
+\setcounter{equation}{15}
 \begin{align}
     \begin{aligned}
-        V(x)= & V(\bm{a})+\frac{1}{2}\left(x_{i}-a_{i}\right)\left(x_{j}-a_{j}\right)\left[\frac{\partial^{2} V}{\partial x_{i} \partial x_{j}}\right]_{x=a}                                          \\
-              & +\frac{1}{3 !}\left(x_{i}-a_{i}\right)\left(x_{j}-a_{j}\right)\left(x_{k}-a_{k}\right)\left[\frac{\partial^{3} V}{\partial x_{i} \partial x_{j}} \overline{x_{k}}\right]_{x=a}+\cdots
+        V(x)= & V(\bm{a})+\frac{1}{2}\left(x_{i}-a_{i}\right)\left(x_{j}-a_{j}\right)\left[\frac{\partial^{2} V}{\partial x_{i} \partial x_{j}}\right]_{x=a}                                       \\
+              & +\frac{1}{3 !}\left(x_{i}-a_{i}\right)\left(x_{j}-a_{j}\right)\left(x_{k}-a_{k}\right)\left[\frac{\partial^{3} V}{\partial x_{i} \partial x_{j} \partial x_k} \right]_{x=a}+\cdots
     \end{aligned}
 \end{align}
 というように展開することができる. そしてこれもまた量子論においては$x=a_i$周辺での調和振動の様子が見て取れるはずであり, そのモードおよび角振動数は第2項に含まれ, $\left(\dfrac{\partial^2 V}{\partial x_i\partial_j}\right)_{x=a}$の固有ベクトルと固有値$\omega_i^2$を求めれば自然と現れる. こういった背景から$\omega_i$を用いて$x=a$での基底状態におけるエネルギー及び各準位は
@@ -196,7 +195,7 @@
 \begin{align}
     \left[-\nabla^{2}+\left(\frac{\mathrm{d}^{2} U}{\mathrm{d} \phi^{2}}\right)_{\phi_{0}(x)}\right] \eta_{i}(x)=\omega_{i}^{2} \eta_{i}(x)\label{eq:5.24}
 \end{align}
-として量子化したときのモード$\eta$と角振動数$\omega_i$を定めることができる. ではこの$\eta(\bm{x},t)$を各モード$\phi_i$で書く,
+として量子化したときのモード$\eta$と角振動数$\omega_i$を定めることができる. ではこの$\eta(\bm{x},t)$を各モード$\phi_i$で書いて
 \begin{align}
     \eta(x, t) & \equiv \phi(x, t)-\phi_{0}(x)\nonumber \\
                & \equiv \sum_{i} c_{i}(t) \eta_{i}(x)
@@ -239,7 +238,7 @@
 \begin{align*}
     \omega_i^2=\bm{k}_i^2+m^2
 \end{align*}
-となる.(連続系にするためには$l\rightarrow\infty$をとれば良い.) そして今古典解に対して量子化したときの調和振動の角振動数が定まったことになるからエネルギーは
+となる.(連続系にするためには$L\rightarrow\infty$をとれば良い.) そして今古典解に対して量子化したときの調和振動の角振動数が定まったことになるからエネルギーは
 \begin{align}
     E_{\{n_i\}} & =V[\phi_0]+\hbar\sum_{k_i}\sqrt{k_i^2+m^2}\left(n_i+\frac{1}{2}\right)+\mathcal{O}(\lambda)\nonumber                      \\
                 & =\hbar\sum_{k_i}\sqrt{k_i^2+m^2}\left(n_i+\frac{1}{2}\right)+\mathcal{O}(\lambda)\qquad \left(\because V[\phi_0]=0\right)
@@ -328,12 +327,25 @@
         \omega_{q}^{2}=m^{2}\left(\frac{1}{2} q^{2}+2\right) & \text{ with } \tilde{\eta}_{q}(z)=\mathrm{e}^{\mathrm{i} q z}\left(3 \tanh ^{2} z-1-q^{2}-3 \mathrm{i} q \tanh z\right)\label{eq:5.50c}
     \end{align}
 \end{subequations}
-となる. ここで, \eqref{eq:5.50c}の$z\rightarrow\infty$での挙動については
+となる.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{figure/fig3.png}
+    \caption{ゼロモード}
+    \label{fig3}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{figure/fig4.png}
+    \caption{変形モード}
+    \label{fig3}
+\end{figure}
+ここで, \eqref{eq:5.50c}の$z\rightarrow\infty$での挙動については
 \begin{align}
     \tilde{\eta}_{q}(z) \underset{z \rightarrow \pm \infty}{\longrightarrow} \exp \left[\mathrm{i}\left(q z \pm \frac{1}{2} \delta(q)\right)\right]\label{eq:5.51} \\
     \delta(q)=-2 \tan ^{-1}\left[3 q /\left(2-q^{2}\right)\right]
 \end{align}
-となり, $\delta$はポテンシャルに対して粒子を飛ばして散乱させたときの位相のズレに対応するという情報も現れる. また, 周期境界条件についてはいま$z=\frac{mx}{\sqrt{2}}$と変数変換を行ったから境界も$\frac{mL}{\sqrt{2}}$というように変換され,
+となり, $\delta$はポテンシャルに対して粒子を飛ばして散乱させたときの位相のズレの情報も現れる. また, 周期境界条件についてはいま$z=\frac{mx}{\sqrt{2}}$と変数変換を行ったから境界も$\frac{mL}{\sqrt{2}}$というように変換され,
 \begin{align}
     q_{n}\frac{mL}{\sqrt{2}}+\delta\left(q_{n}\right)=2 n \pi
 \end{align}
@@ -374,6 +386,59 @@
 
 以上のことを踏まえると\eqref{eq:5.56}のエネルギーはmesonとキンクの散乱状態を記述しており, 運動エネルギーにはmesonの情報しか含まれておらず, キンクのエネルギーは含まれていないということがわかる. これは今$\mathcal{O}(\lambda)$において静的かつmesonが散乱するようなポテンシャルのキンク解を考えていることから納得できる. さらには次のセクションで触れるが, キンク質量のオーダーは($1/\lambda$)であり, 今weak-couplingを考えているから$\lambda$は非常に小さいことから, キンク質量は非常に大きな値となる. このことからも本質的に静止していると捉えて問題がないと言える.(キンクの運動エネルギーは$P^2/2M$とかけ, $M$が大きい場合ゼロとなる.) また, この結果からどれか1つのモードが一回励起されるとmeson-キンクの散乱状態になるといえる. そしてこのような励起が複数回起これば, 対応する漸近運動量を持つ複数のmesonがキンクから散乱している状況ができあがるということになる.
 
+\newpage
+
+\appendix
+\def\thesection{Appendix \Alph{section}}
+\section{What is weak-expansion?}
+これまでこの教科書において一度もweak-coupling, 結合定数について触れてこなかった気がしたので, ここで簡単にまとめておく.
+
+結合定数といわれて大学一年生が一番多く浮かべるのは受験化学で学んだ
+\setcounter{equation}{0}
+\begin{align*}
+    A+B \rightleftarrows A B \\
+    K_{B}=\frac{[A B]}{[A][B]}
+\end{align*}
+ではないだろうか. 実際, Google先生に単純に聞いてみても「結合定数とは, ある分子Aと別の分子Bが非共有結合(水素結合, 疎水結合, イオン結合など)により結合／解離の平衡反応を生じる場合に, 当該分子間の結合力を数値で表す指標である.」と一番に返ってくる. もちろんこれは正しい. しかし, 物理学の世界における"結合"といえば素粒子の間に働く相互作用の強さを主に意味する. 従ってその素粒子をどんな模型で表したかによってその関数形は異なるということである. そういった意味では前者の化学的定義の仕方も反応後と反応前のモル濃度の比率によって分子間の相互作用を数値的に表現する指標となっている.
+
+例として素粒子の描像を描くのに最も簡単な方法として用いるバネに繋がれた粒子の運動を考えると, そのラグランジアンは
+\begin{align*}
+    L=\frac{m}{2} \dot{X}^{2}-\frac{k}{2} X^{2}
+\end{align*}
+となる. ここで粒子とバネの間の相互作用の強さのパラメータとなっているのは第2項の$X$の係数であり, これがまさに結合定数である. 他には強い相互作用($\pi N$結合定数), 電磁気力(微細構造定数), 弱い相互作用(フェルミ結合定数), 重力(重力微細構造定数)
+\begin{align*}
+     & F_{\text {strong }}>F_{E L}>F_{\text {weak }}  \gg F_{\text {Gravity }}                                                                                                                \\
+     & \frac{g_{n \omega \omega}^{2}}{4 \pi \hbar c}> \frac{e^{2}}{4 \pi \varepsilon_{0} \hbar c}> \frac{\left(M_{0} c^{2}\right)^{2} G_{T}{A}}{(\hbar c)^{2}}\gg \frac{G M_{p}^{2}}{\hbar c} \\
+     & 1> \quad 10^{-3}> \quad 10^{-5}\gg \quad 10^{-39}
+\end{align*}
+が知られている.
+
+ここで, 場の量子論において弱結合と強結合の分け方は無次元量の結合定数$g$に対してその値が1と比べて十分小さい場合($g\ll 1$)オーダーであるとき, 弱結合(weak-coupling)であるといい, この理論は結合定数$g$の級数展開による摂動論によって記述される. 一方, 結合定数が1と同等かそれ以上のオーダーであるとき, 強結合(strong-coupling)であるといい, この理論は量子色力学において記述される.
+
+ではソリトン模型における結合定数の取り扱いについてみておく. 2章で扱ったように, kink解のエネルギー密度は
+\begin{align*}
+    \epsilon(x)=\dfrac{m^4}{2\lambda}\mathrm{sech}^4\left[\dfrac{m(x-x_0)}{\sqrt{2}}\right]
+\end{align*}
+というようになり, これをプロットすると図\ref{fig2}のように$\mathcal{O}(1)$のスケールでみると
+\begin{align*}
+    l\sim \dfrac{1}{m}
+\end{align*}
+のスケールで変化することがわかる.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{figure/fig2.png}
+    \caption{}
+    \label{fig2}
+\end{figure}
+そしてエネルギー密度を積分すればkink mass $M_\text{kink}$が得られ,
+\begin{align*}
+    M_{\text{kink}} & =\int_{-\infty}^{\infty}\mathrm{d}x~\epsilon(x)     \\
+                    & =\dfrac{2\sqrt{2}}{3}\dfrac{m^3}{\lambda}           \\
+                    & \Rightarrow \lambda \sim \dfrac{1}{M_{\text{kink}}}
+\end{align*}
+というようになり, 結合定数と質量の関係が得られる.
+
+以上のように, 各模型に対して結合定数が定まっており, その値が1より非常に小さい場合, 結合定数の級数展開による摂動により模型を記述することができる. これをweak-coupling expansionと呼ぶ.
 
 
 \begin{thebibliography}{99}
