@@ -51,13 +51,13 @@
 \vspace{-11mm}
 \begin{subequations}
     \begin{align}
-         & T[\phi]\equiv\frac{1}{2}\int\mathrm{d}x\left(\dfrac{\partial\phi}{\partial t}\right)^2      \\
-         & V[\phi]\equiv\int\mathrm{d}x\left[\frac{1}{2}(\nabla \phi)^2+U(\phi)\right]\label{eq:5.20b}
+         & T[\phi]\equiv\frac{1}{2}\int\mathrm{d}\bm{x}\left(\dfrac{\partial\phi}{\partial t}\right)^2      \\
+         & V[\phi]\equiv\int\mathrm{d}\bm{x}\left[\frac{1}{2}(\nabla \phi)^2+U(\phi)\right]\label{eq:5.20b}
     \end{align}
 \end{subequations}
 で定義されている. このラグランジアンを一見すると「あれ?\eqref{eq:A.1}の形ってラグランジアン密度積分してるし作用$S$では?」というように思うかもしれない. しかし, よく見ると時間積分はしておらず, あくまで空間積分のみ行っており, 作用の形にはなっていない.
 \begin{align*}
-    \text{(作用):}\quad S=\int \mathrm{d}s \int\mathrm{d}x~ \mathcal{L},\qquad \text{(ラグランジアン):}\quad L=\int\mathrm{d}\bm{x}~\mathcal{L}
+    \text{(作用):}\quad S=\int \mathrm{d}t \int\mathrm{d}\bm{x}~ \mathcal{L},\qquad \text{(ラグランジアン):}\quad L=\int\mathrm{d}\bm{x}~\mathcal{L}
 \end{align*}
 このことを踏まえると, 場の理論におけるEuler-Lagrange方程式
 \begin{align*}
@@ -77,9 +77,9 @@
 \end{align}
 として運動方程式を得る.
 
-しかしながら教科書ではEuler-Lagrange方程式を解くと(5.21)を得ると言っているがその形にはなっていない. ここで必要となってくるのが汎関数の微分の知識である. 証明は省くが, $I=\int_{A}^{B} F(f) \mathrm{d} x$で定義された汎関数の微分のは
+しかしながら教科書ではEuler-Lagrange方程式を解くと(5.21)を得ると言っているがその形にはなっていない. ここで必要となってくるのが汎関数の微分の知識である. 証明は省くが, $I=\int_{A}^{B} F(f) \mathrm{d} x$で定義された汎関数の微分は
 \begin{align*}
-    \frac{\delta I}{\delta f}=\frac{\partial F}{\partial f}-\frac{\mathrm{d}}{\mathrm{d} x} \frac{\partial F}{\partial\left(\frac{\mathrm{d} f}{\mathrm{~d} x}\right)}
+    \frac{\delta I}{\delta f}=\frac{\partial F}{\partial f}-\frac{\mathrm{d}}{\mathrm{d} x} \frac{\partial F}{\partial\left(\frac{\mathrm{d} f}{\mathrm{~d} x}\right)}\quad \xrightarrow[]{\text{(3+1)次元}} \quad \dfrac{\delta I}{\delta f}=\dfrac{\partial F}{\partial \phi}-\partial^{\mu}\dfrac{\partial F}{\partial\left(\partial_\mu \phi\right)}
 \end{align*}
 で計算される. これを\eqref{eq:5.20b}のポテンシャルに対して用いてみると
 \begin{align}
@@ -92,6 +92,29 @@
 \end{align}
 として式\eqref{eq:5.21}を得る. 結論としては単純にEuler-Lagrange方程式を計算しただけでは導かれず, 汎関数の微分の関係式と組み合わせることで導かれるということである.
 
+しかしながら, 最終的には一つの関係式に収まるにも関わらず, 式の一方はラグランジアン密度$\mathcal{L}$のEuler-Lagrange方程式から導かれ, もう一方はポテンシャル$V[\phi]$の汎関数の微分という式変形の方法から無理くり出してくるというのはなんだか議論の一貫性を感じない. そこで, ラグランジアン$L$から直接\eqref{eq:5.21}を得ることを試みた. これまでに行った方法ではポテンシャルの汎関数微分をしたが, ラグランジアンという枠組みで見たときにそれは運動エネルギー項$T[\phi]$と$V[\phi]$で構成されているのだから運動エネルギー項$T$も汎関数微分すべきではないだろうか. 実際に$T[\phi]$を汎関数微分してみると
+\begin{align*}
+    \dfrac{\delta T}{\delta \phi} & =0+\dfrac{\partial}{\partial t}\left(\dfrac{\partial \phi}{\partial t}\right) \\
+                                  & =\dfrac{\partial^2 \phi}{\partial t^2}
+\end{align*}
+となる. この結果を踏まえて\eqref{eq:5.21}を見てみると
+\begin{align*}
+    \text{(5.21)}\quad & \Leftrightarrow \quad \dfrac{\delta T}{\delta \phi} =\dfrac{\delta V}{\delta \phi} \\
+                       & \Leftrightarrow \quad \dfrac{\delta \left(T[\phi]-V[\phi]\right)}{\delta \phi}=0   \\
+                       & \Leftrightarrow \quad \dfrac{\delta L}{\delta \phi}=0
+\end{align*}
+となっていることがわかる. あれ?作用の最小作用の原理と同じ形では?
+
+実はよくよく考えてみればそれはそうと思えるのである. いま, 最初に説明したように, ラグランジアン密度$\mathcal{L}$について空間積分しかとっていないため, ラグランジアン$L$と表記したが, もし仮に時間積分もとった作用
+\begin{align*}
+    S  =\int\mathrm{d}t\int \mathrm{d}\bm{x}\left[\frac{1}{2}\left(\dfrac{\partial\phi}{\partial t}\right)^2-\frac{1}{2}(\nabla\phi)^2-U(\phi)\right]
+\end{align*}
+を考えたとしても, その汎関数微分は
+\begin{align*}
+    \dfrac{\delta S}{\delta \phi}=\dfrac{\delta L}{\delta \phi}
+\end{align*}
+となる. したがって$\dfrac{\delta L}{\delta \phi}=0$を計算したとしても作用の最小作用の原理を考えていることと同義であり, それは対象の運動方程式に対応する. つまり結論としてはラグランジアン密度$\mathcal{L}$を用いてEuler-Lagrange方程式を解くのももちろん正しいが, 議論の一貫性を考えるとラグランジアン$L$を拡張して作用$S$をつくり, その最小作用の原理を考えるのが最も良い手段になるといえる.
+
 なお, 静的であるという条件から
 \begin{align}
     \dfrac{\partial^2 \phi}{\partial t^2} & =-\dfrac{\partial U(\phi)}{\partial \phi}+\nabla^2\phi\nonumber \\
@@ -100,11 +123,14 @@
 \end{align}
 を得る.
 
+
+
 \newpage
 \subsection{(5.23)}
 (5.23を導くにあたって, 教科書では"We can make a functional Taylor expansion of V about $\phi_0$..."というように書かれている. これだけを見ると汎関数のTaylor展開をすべきであろうと思える. しかし定義通りに汎関数のTaylor展開をすると
 \begin{align*}
-    V[\phi]=V[\phi_0]+\left.\int\mathrm{d}x_1\dfrac{\delta V[\phi]}{\delta \phi(x_1)}\right|_{\phi=\phi_0}\phi(x_1)+\frac{1}{2}\left.\int\mathrm{d}x_1\mathrm{d}x_2\dfrac{\delta^2V[\phi]}{\delta\phi(x_2)\delta\phi(x_1)}\right|_{\phi=\phi_0}\phi(x_1)\phi(x_2)+\cdots
+    V[\phi]= & V[\phi_0]+\left.\int\mathrm{d}\bm{x_1}\dfrac{\delta V[\phi]}{\delta \phi(\bm{x_1})}\right|_{\phi=\phi_0}\left\{\phi(\bm{x_1})-\phi_0(\bm{x_1})\right\}                                                                                              \\
+             & +\frac{1}{2}\left.\int\mathrm{d}\bm{x_1}\mathrm{d}\bm{x_2}\dfrac{\delta^2V[\phi]}{\delta\phi(\bm{x_2})\delta\phi(\bm{x_1})}\right|_{\phi=\phi_0}\left\{\phi(\bm{x_1})-\phi_0(\bm{x_1})\right\}\left\{\phi(\bm{x_2})-\phi_0(\bm{x_2})\right\}+\cdots
 \end{align*}
 となる. しかしまあこれは面倒くさい. そこで我々は物理の人間なので証明なしに微分と積分の順序を入れ替えて良いとすれば, $V[\phi]$の被積分関数をTaylor展開すれば良いとして計算を行う.
 
@@ -112,7 +138,7 @@
 \begin{align*}
     K(\phi)=\frac{1}{2}(\nabla \phi)^2+U(\phi)
 \end{align*}
-として$\phi=\phi_0$まわりのTaylor展開を考える. つまり$\phi\rightarrow \phi_0+\eta$としたときの$K(\phi)$を見ればよい. このことから方針としてひとまず$\delta K=K(\phi_0+\eta)-K(\phi_0)$を計算して最後に$\delta K+K(\phi_0)$を計算することにする.
+として$\phi=\phi_0$まわりのTaylor展開を考える. つまり$\phi\rightarrow \phi_0+\eta$としたときの$K(\phi)$を見ればよい. このことから方針としてひとまず$\delta K=K(\phi_0+\eta)-K(\phi_0)$を計算して最後に$K(\phi)=\delta K+K(\phi_0)$を計算することにする.
 \begin{align*}
     \delta K & =K(\phi_0+\eta)-K(\phi_0)                             \\
              & =\delta\left[\frac{1}{2}(\nabla\phi)^2+U(\phi)\right]
@@ -144,11 +170,11 @@
 \end{align*}
 となる. この結果を$V[\phi]$に代入すれば
 \begin{align}
-    V[\phi] & =\int\mathrm{d}\bm{x} K(\phi)\nonumber                                                                                                                                                                                                                                                             \\
-            & =V[\phi_0]+\int\mathrm{d}\bm{x}\left[\frac{1}{2}(\nabla\eta)^2+\nabla(\eta\nabla\phi_0)+\frac{1}{2!}\left.\dfrac{\partial^2 U}{\partial \phi^2}\right|_{\phi=\phi_0}\eta^2+\cdots\right] \nonumber                                                                                                 \\
-            & =V[\phi_0]+\underbrace{\int\nabla(\eta\nabla\phi_0)\mathrm{d}\bm{x}}_{=0\quad (\because \text{表面項})}+\int\mathrm{d}\bm{x}\left[\frac{1}{2}(\nabla\eta)^2+\frac{1}{2!}\left.\dfrac{\partial^2 U}{\partial \phi^2}\right|_{\phi=\phi_0}\eta^2+\cdots\right]\nonumber                              \\
-            & =V[\phi_0]+\frac{1}{2}\left[\eta\nabla\eta\right]_{\text{surface}}-\frac{1}{2}\int\eta\nabla^2\eta\mathrm{d}\bm{x}+\int\mathrm{d}\bm{x}\left[\frac{1}{2!}\left.\dfrac{\partial^2 U}{\partial \phi^2}\right|_{\phi=\phi_0}\eta^2+\cdots\right]\quad \left(\because \text{部分積分}\right) \nonumber \\
-            & =V\left[\phi_{0}\right]+\int \mathrm{d} x \frac{1}{2}\left\{\eta(\boldsymbol{x})\left[-\nabla^{2}+\left(\frac{\mathrm{d}^{2} U}{\mathrm{~d} \phi^{2}}\right)_{\phi_{0}(\boldsymbol{x})}\right] \eta(\boldsymbol{x})+\cdots\right\}
+    V[\phi] & =\int\mathrm{d}\bm{x} K(\phi)\nonumber                                                                                                                                                                                                                                                                               \\
+            & =V[\phi_0]+\int\mathrm{d}\bm{x}\left[\frac{1}{2}(\nabla\eta)^2+\nabla(\eta\nabla\phi_0)+\frac{1}{2!}\left.\dfrac{\partial^2 U}{\partial \phi^2}\right|_{\phi=\phi_0}\eta^2+\cdots\right] \nonumber                                                                                                                   \\
+            & =V[\phi_0]+\underbrace{\int\nabla(\eta\nabla\phi_0)\mathrm{d}\bm{x}}_{=0\quad (\because \text{表面項})}+\int\mathrm{d}\bm{x}\left[\frac{1}{2}(\nabla\eta)^2+\frac{1}{2!}\left.\dfrac{\partial^2 U}{\partial \phi^2}\right|_{\phi=\phi_0}\eta^2+\cdots\right]\nonumber                                                \\
+            & =V[\phi_0]+\underbrace{\frac{1}{2}\left[\eta\nabla\eta\right]_{\text{surface}}}_{=0}-\frac{1}{2}\int\eta\nabla^2\eta\mathrm{d}\bm{x}+\int\mathrm{d}\bm{x}\left[\frac{1}{2!}\left.\dfrac{\partial^2 U}{\partial \phi^2}\right|_{\phi=\phi_0}\eta^2+\cdots\right]\quad \left(\because \text{部分積分}\right) \nonumber \\
+            & =V\left[\phi_{0}\right]+\int \mathrm{d} \bm{x} \frac{1}{2}\left\{\eta(\boldsymbol{x})\left[-\nabla^{2}+\left(\frac{\mathrm{d}^{2} U}{\mathrm{~d} \phi^{2}}\right)_{\phi_{0}(\boldsymbol{x})}\right] \eta(\boldsymbol{x})+\cdots\right\}
 \end{align}
 を得る.
 
