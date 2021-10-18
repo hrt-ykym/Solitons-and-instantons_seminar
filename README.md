@@ -2,4 +2,4 @@
 SOLITONS AND INSTANTONS -An Introduction to Solitons and Instantons in Quantum Field Theory-のゼミ資料です.
 
 # 
-- main.pdfを参照してください.
+- 各章のmain.pdfを参照してください.(appendix.pdfも適宜.)
